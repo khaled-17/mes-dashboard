@@ -8,11 +8,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #f39c12;
-  --color-secondary: #00ccf2;
-  --color-tertiary: #ff2366;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  --color-primary: #2E62ED;
+  --color-secondary: #00CCF2;
+  --color-tertiary: #FF2366;
 }
 
 @media (prefers-color-scheme: dark) {
