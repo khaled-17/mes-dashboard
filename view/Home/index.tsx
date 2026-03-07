@@ -9,6 +9,7 @@ export default function HomeView() {
     ];
 
     return (
+        <>
         <div className="flex flex-col gap-6">
             <h1 className="text-3xl font-bold text-gray-800">الرئيسية</h1>
             <p className="text-gray-600">
@@ -21,5 +22,7 @@ export default function HomeView() {
                 ))}
             </div>
         </div>
+        <h1 className="text-center text-5xl mt-40">Karim - Dashboard</h1>
+        </>
     );
 }
