@@ -7,7 +7,7 @@ export default function UsersView() {
                     <p className="text-gray-600 mt-2">عرض وإدارة الحسابات الخاصة بالمستخدمين في النظام.</p>
                 </div>
                 <button className="bg-primary text-white px-6 py-2 rounded-lg shadow-sm hover:opacity-90 transition-opacity font-medium">
-                    إضافة مستخدم
+                    إضافة مستخدم j
                 </button>
             </div>
 
