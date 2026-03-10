@@ -19,20 +19,25 @@ export const metadata: Metadata = {
 
 import Sidebar from "@/components/Sidebar";
 
+import Header from "@/components/Header";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 flex h-screen overflow-hidden`}
       >
         <Sidebar />
-        <main className="flex-1 overflow-y-auto ">
-          {children}
-        </main>
+
+        <div className="flex-1 flex flex-col">
+          <Header />
+
+          <main className="flex-1 overflow-y-auto p-8">{children}</main>
+        </div>
       </body>
     </html>
   );
