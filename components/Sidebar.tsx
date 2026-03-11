@@ -2,16 +2,16 @@ import Link from 'next/link';
 
 export default function Sidebar() {
     const pages = [
-        { name: 'الرئيسية', path: '/' },
-        { name: 'المستخدمين', path: '/users' },
-        { name: 'التقارير', path: '/reports' },
-        { name: 'الإعدادات', path: '/settings' },
+        { name: 'Home', path: '/' },
+        { name: 'Users', path: '/users' },
+        { name: 'Reports', path: '/reports' },
+        { name: 'Settings', path: '/settings' },
     ];
 
     return (
         <aside className="w-64 h-screen bg-primary text-white flex flex-col p-4 shadow-lg sticky top-0">
             <div className="text-2xl font-bold mb-8 text-center border-b border-white/20 pb-4">
-                لوحة التحكم
+                Dashboard
             </div>
             <nav className="flex flex-col gap-2">
                 {pages.map((item) => (
