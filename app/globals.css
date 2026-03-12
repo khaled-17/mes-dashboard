@@ -51,6 +51,9 @@
   --color-primary: #2E62ED;
   --color-secondary: #00CCF2;
   --color-tertiary: #FF2366;
+  --color-label-black: #000000;
+  --color-soft-gray: #EFEFEF;
+  --color-kpi-blue: #2E4A79;
 }
 
 :root {
