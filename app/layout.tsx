@@ -44,6 +44,7 @@ export default function RootLayout({
       >
         <TooltipProvider>
           <Sidebar />
+
           <div className="flex flex-col w-full">
             <Header />
 
@@ -51,6 +52,7 @@ export default function RootLayout({
               {children}
             </main>
           </div>
+
         </TooltipProvider>
       </body>
     </html>
