@@ -1,17 +1,27 @@
 import type { Metadata } from "next";
-import { Roboto, Montserrat } from "next/font/google";
+import { Geist, Geist_Mono, Roboto, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const roboto = Roboto({
   variable: "--font-roboto",
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
 });
 
 const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600"],
   variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,11 +39,11 @@ export default function RootLayout({
   return (
     <html>
       <body
-        className={`${roboto.variable} ${montserrat.variable} antialiased bg-gray-50 flex h-screen overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${montserrat.variable} antialiased bg-gray-50 flex h-screen overflow-hidden`}
       >
         <TooltipProvider>
           <Sidebar />
-          <main className="flex-1 overflow-y-auto p-8">
+          <main className="flex-1 overflow-y-auto p-8 custom-scrollbar">
             {children}
           </main>
         </TooltipProvider>

@@ -50,26 +50,26 @@
 }
 
 @theme {
-  --color-primary: #2d62ed;
-  --color-secondary: #00ccf2;
-  --color-tertiary: #ff2366;
+  --color-primary: #2D62ED;
+  --color-secondary: #00CCF2;
+  --color-tertiary: #FF2366;
   --color-label-black: #000000;
-  --color-soft-gray: #efefef;
-  --color-kpi-blue: #2e4a79;
-  --color-contemporary-blue: #00ccf2;
-  --color-contemporary-lightblue: #00d1de;
-  --color-contemporary-green: #00d3be;
-  --color-contemporary-lightgreen: #26d395;
-  --color-contemporary-darkgreen: #6dcf67;
-  --color-contemporary-darkyellow: #a0c73a;
-  --color-contemporary-yellow: #d0ba05;
-  --color-contemporary-lightorange: #ffa600;
-  --color-contemporary-orange: #fb7644;
-  --color-contemporary-red: #ec5967;
-  --color-contemporary-lightpurple: #ca4e82;
-  --color-contemporary-purple: #994f90;
-  --color-contemporary-darkpurple: #634f8d;
-  --color-contemporary-darkblue: #2e4a79;
+  --color-soft-gray: #EFEFEF;
+  --color-kpi-blue: #2E4A79;
+  --color-contemporary-blue: #00CCF2;
+  --color-contemporary-lightblue: #00D1DE;
+  --color-contemporary-green: #00D3BE;
+  --color-contemporary-lightgreen: #26D395;
+  --color-contemporary-darkgreen: #6DCF67;
+  --color-contemporary-darkyellow: #A0C73A;
+  --color-contemporary-yellow: #D0BA05;
+  --color-contemporary-lightorange: #FFA600;
+  --color-contemporary-orange: #FB7644;
+  --color-contemporary-red: #EC5967;
+  --color-contemporary-lightpurple: #CA4E82;
+  --color-contemporary-purple: #994F90;
+  --color-contemporary-darkpurple: #634F8D;
+  --color-contemporary-darkblue: #2E4A79;
   --color-contemporary-darkerblue: #003f5c;
 }
 
@@ -154,4 +154,22 @@
   html {
     @apply font-sans;
   }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #E2E8F0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #003F5C;
+  border-radius: 10px;
+  border: 2px solid #E2E8F0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #002D42;
 }
