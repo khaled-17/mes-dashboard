@@ -19,7 +19,8 @@ const BottomHeader = () => {
   return (
     <>
       <div className="h-[50px]  shadow-md flex items-center px-8  justify-between  ">
-        {pathname !== "/planning" &&   "/" ? (
+
+        {pathname !== "/planning" &&  pathname !== "/" ? (
           <>
             <div className=" flex items-center gap-4 ">
               <FactoryDropdownMenu />
