@@ -19,7 +19,7 @@ export default function PlanningPage() {
         <div className="flex-1 flex flex-col relative items-center">
           <RouteTimeline />
 
-          <div className="w-full mt-10 relative flex justify-center px-4">
+          <div className="w-full relative flex justify-center px-4">
             <div className="absolute left-8 top-12">
               <VerticalStepper />
             </div>

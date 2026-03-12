@@ -12,9 +12,7 @@
   --font-roboto: var(--font-roboto), sans-serif;
   --font-montserrat: var(--font-montserrat), sans-serif;
   
-  --color-primary: #2E62ED;
-  --color-secondary: #00CCF2;
-  --color-tertiary: #FF2366;
+
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -42,7 +40,6 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -55,6 +52,11 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+
+  --color-primary: #2E62ED;
+  --color-secondary: #00CCF2;
+  --color-tertiary: #FF2366;
 }
 
 :root {
