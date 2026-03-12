@@ -30,6 +30,7 @@ export const metadata: Metadata = {
 
 import Sidebar from "@/components/Sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import Header from "@/components/Header";
 
 export default function RootLayout({
   children,
@@ -43,9 +44,14 @@ export default function RootLayout({
       >
         <TooltipProvider>
           <Sidebar />
-          <main className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+         <div className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+         <header className="-mt-8 -mx-8 mb-24">
+        <Header />
+      </header>
+           <main className="flex-1 overflow-y-auto p-8 custom-scrollbar">
             {children}
           </main>
+         </div>
         </TooltipProvider>
       </body>
     </html>

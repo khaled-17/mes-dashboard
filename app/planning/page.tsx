@@ -1,4 +1,4 @@
-import Header from "@/components/planning-section/PlanningHeader";
+
 import TopBar from "@/components/planning-section/TopBar";
 import RouteTimeline from "@/components/planning-section/RouteTimeline";
 import VerticalStepper from "@/components/planning-section/VerticalStepper";
@@ -8,9 +8,7 @@ import PreDefinedProcesses from "@/components/planning-section/PreDefinedProcess
 export default function PlanningPage() {
   return (
     <div className="w-full flex flex-col font-sans text-[#0F172A]">
-      <header className="-mt-8 -mx-8 mb-24">
-        <Header />
-      </header>
+     
 
       <TopBar />
 
