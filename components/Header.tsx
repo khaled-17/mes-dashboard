@@ -1,13 +1,17 @@
-import BottomHeader from "./BottomHeader/BottomHeader"
+"use client";
 
+import { usePathname } from "next/navigation";
+import BottomHeader from "./Header/BottomHeader";
+import TopHeader from "./Header/TopHeader";
 
 const Header = () => {
+  const pathname = usePathname();
   return (
-   <header>
+    <header className="flex flex-col ">
+      {pathname !== "/" && pathname !== "/planning" && <TopHeader />}
+      <BottomHeader />
+    </header>
+  );
+};
 
- <BottomHeader />
-   </header>
-  )
-}
-
-export default Header
+export default Header;
