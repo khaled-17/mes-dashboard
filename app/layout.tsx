@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 export default function RootLayout({
   children,
@@ -30,14 +30,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 flex h-screen overflow-hidden`}
       >
-        <Sidebar />
-     
-      <div className="flex flex-col w-full">
-         <Header/>
+        <TooltipProvider>
+          <Sidebar />
           <main className="flex-1 overflow-y-auto p-8">
-          {children}
-        </main>
-      </div>
+            {children}
+          </main>
+        </TooltipProvider>
       </body>
     </html>
   );
