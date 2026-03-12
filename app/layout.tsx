@@ -44,14 +44,13 @@ export default function RootLayout({
       >
         <TooltipProvider>
           <Sidebar />
-         <div className="flex-1 overflow-y-auto p-8 custom-scrollbar">
-         <header className="-mt-8 -mx-8 mb-24">
-        <Header />
-      </header>
-           <main className="flex-1 overflow-y-auto p-8 custom-scrollbar">
-            {children}
-          </main>
-         </div>
+          <div className="flex flex-col w-full">
+            <Header />
+
+            <main className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+              {children}
+            </main>
+          </div>
         </TooltipProvider>
       </body>
     </html>
