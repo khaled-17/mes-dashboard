@@ -45,10 +45,10 @@ export default function RootLayout({
         <TooltipProvider>
           <Sidebar />
 
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-screen">
             <Header />
 
-            <main className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+            <main className=" overflow-y-auto p-8 custom-scrollbar">
               {children}
             </main>
           </div>
