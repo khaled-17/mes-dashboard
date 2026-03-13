@@ -36,9 +36,9 @@ export function BreadCrumbComponent() {
                     return (
                         <Fragment key={index}>
                             <BreadcrumbItem >
-                                <BreadcrumbLink href={`/${segments.slice(0, index + 1).join("/")}`} className="text-[#003F5C] font-semibold">{displayedSeg}</BreadcrumbLink>
+                                <BreadcrumbLink href={`/${segments.slice(0, index + 1).join("/")}`} className="text-contemporary-darkerblue font-semibold font-montserrat">{displayedSeg}</BreadcrumbLink>
                             </BreadcrumbItem>
-                            {segments.length-1 > index && <BreadcrumbSeparator className="text-[#003F5C] text-[20px] leading-6.75 font-semibold w-2">\</BreadcrumbSeparator>}
+                            {segments.length-1 > index && <BreadcrumbSeparator className="text-contemporary-darkerblue text-[20px] leading-6.75 font-semibold font-montserrat w-2">\</BreadcrumbSeparator>}
                         </Fragment>
                     )
                 })
