@@ -218,6 +218,7 @@ const ResourcesPage = () => {
                   <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                   <input
                     type="text"
+                    aria-label="Search material supplier records by material name or type"
                     placeholder="Search by Material Name - Type"
                     className="h-10 w-1/4 border-b border-slate-200 bg-white pl-9 pr-3 text-sm outline-none transition-colors "
                   />
