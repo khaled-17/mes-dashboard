@@ -1,5 +1,7 @@
 import MachinesPage from "@/view/Machines/MachinesPage";
 
-export default function Machines() {
+const MachinesTabPage = () => {
   return <MachinesPage />;
-}
+};
+
+export default MachinesTabPage;
