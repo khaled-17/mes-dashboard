@@ -22,7 +22,7 @@ const TopHeader = () => {
       className=" bg-white border border-gray-200"
       aria-label="Main navigation"
     >
-      <ul className="flex justify-between h-12.5 px-6 gap-8 list-none m-0 p-0 overflow-x-auto">
+      <ul className="flex justify-between h-[50px] px-6 gap-8 list-none m-0 p-0 overflow-x-auto">
         {tabs.map((tab) => {
           const isActive = pathname === tab.href;
           return (
