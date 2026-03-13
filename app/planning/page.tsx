@@ -1,12 +1,11 @@
-"use client";
-
-import { useState } from "react";
+'use client'
 import Header from "@/components/planning-section/PlanningHeader";
 import TopBar from "@/components/planning-section/TopBar";
 import RouteTimeline from "@/components/planning-section/RouteTimeline";
 import VerticalStepper from "@/components/planning-section/VerticalStepper";
 import OperationForm from "@/components/planning-section/OperationForm";
 import PreDefinedProcesses from "@/components/planning-section/PreDefinedProcesses";
+import { useState } from "react";
 
 export default function PlanningPage() {
   const [activeStep, setActiveStep] = useState(1);
@@ -49,7 +48,7 @@ export default function PlanningPage() {
   };
 
   return (
-    <div className="w-full flex flex-col bg-[#F4F7FE] font-sans text-[#0F172A] min-h-screen">
+    <div className="w-full flex flex-col font-sans text-[#0F172A]">
       <header className="-mt-8 -mx-8 mb-24">
         <Header />
       </header>
