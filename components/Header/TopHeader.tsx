@@ -2,11 +2,32 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  getActiveTabFromPathname,
-  getSectionKeyFromPathname,
-  SECTION_NAVIGATION,
-} from "@/lib/section-navigation";
+
+const tabs = [
+  // resources page tabs
+  [
+    { label: "TIME LINE", href: "/resources" },
+    { label: "SUPPLY", href: "/resources/supply" },
+    { label: "WEIGHT", href: "/resources/weight" },
+    { label: "CONSUMPTION", href: "/resources/consumption/process" },
+    { label: "PRODUCT & SCRAP", href: "/resources/product-scrap" },
+  ],
+  // /manufacturing page tabs
+  [
+    { label: "FLOW CHART", href: "/manufacturing" },
+    { label: "JOB ORDERS", href: "/manufacturing/joborders" },
+    { label: "ROUTES", href: "/manufacturing/routes" },
+    { label: "PROCESS", href: "/manufacturing/process" },
+    { label: "OUTPUT", href: "/manufacturing/output" },
+  ],
+  // machines page tabs
+  [
+    { label: "INFORMATION", href: "/machines" },
+    { label: "STATISTICS", href: "/machines/statistics" },
+    { label: "HISTORY", href: "/machines/history" },
+    { label: "DIGITAL TWIN", href: "/machines/digitaltwin" },
+  ],
+];
 
 const TopHeader = () => {
   const pathname = usePathname();
