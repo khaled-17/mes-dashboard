@@ -6,7 +6,6 @@ const SupplyPage = () => {
       <SectionBreadcrumbs />
 
       <h1>Supply</h1>
-      <p></p>
     </div>
   );
 };
