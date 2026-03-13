@@ -107,6 +107,7 @@ const ResourcesPage = () => {
           </button>
 
           <label className="relative block min-w-72">
+            <span className="sr-only">Search materials by name or type</span>
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
