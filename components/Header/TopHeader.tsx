@@ -19,7 +19,7 @@ const TopHeader = () => {
 
   return (
     <nav
-      className="w-full bg-white border border-gray-200"
+      className=" bg-white border border-gray-200"
       aria-label="Main navigation"
     >
       <ul className="flex justify-between h-12.5 px-6 gap-8 list-none m-0 p-0 overflow-x-auto">
