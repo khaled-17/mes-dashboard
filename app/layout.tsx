@@ -40,19 +40,17 @@ export default function RootLayout({
   return (
     <html>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${montserrat.variable} antialiased bg-gray-50 flex h-screen overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${montserrat.variable} antialiased bg-blue-50 flex h-screen overflow-hidden font-montserrat`}
       >
         <TooltipProvider>
           <Sidebar />
-
-          <div className="flex flex-col w-screen">
+          <div className="  flex flex-col w-screen ">
             <Header />
 
-            <main className=" overflow-y-auto p-8 custom-scrollbar">
+            <main className=" overflow-y-auto p-8 custom-scrollbar ">
               {children}
             </main>
           </div>
-
         </TooltipProvider>
       </body>
     </html>
