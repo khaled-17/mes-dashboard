@@ -9,14 +9,26 @@ import { useParams } from "next/navigation";
 const ResourcesPageTab = () => {
   const params = useParams();
 
-  return (
-    <>
-      {params.tab === "supply" && <SupplyPage />}
-      {params.tab === "weight" && <WeightPage />}
-      {params.tab === "consumption" && <ConsumptionPage />}
-      {params.tab === "product-scrap" && <ProductScrap />}
-    </>
-  );
+  const tab = params.tab;
+
+  if (tab === "supply") {
+    return <SupplyPage />;
+  }
+
+  if (tab === "weight") {
+    return <WeightPage />;
+  }
+
+  if (tab === "consumption") {
+    return <ConsumptionPage />;
+  }
+
+  if (tab === "product-scrap") {
+    return <ProductScrap />;
+  }
+
+  // Fallback for unknown or missing `tab` values
+  return <SupplyPage />;
 };
 
 export default ResourcesPageTab;
