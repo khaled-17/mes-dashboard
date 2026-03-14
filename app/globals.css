@@ -134,42 +134,6 @@
     @apply font-sans;
 }
 }
-
-
-/* Chrome / Edge */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #003F5C2B;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #003F5C;
-  border-radius: 10px;
-}
-
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #003F5C #003F5C2B;
-}
-
-.progress-animate [data-slot="progress-indicator"] {
-  transform: translateX(calc(-100% + var(--progress) * 1%));
-  animation: progressGrow 2s ease-out;
-}
-
-@keyframes progressGrow {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(calc(-100% + var(--progress) * 1%));
-  }
-}
-
 .custom-scrollbar::-webkit-scrollbar {
   width: 12px;
 }
@@ -186,30 +150,4 @@
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #002D42;
-}
-
-/* ✅ Chrome, Edge, Safari */
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #003F5C2B;
-  border-radius: 100px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #003F5C;
-  border-radius: 100px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #002d42;
-}
-
-/* ✅ Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #003F5C #003F5C2B;
 }
