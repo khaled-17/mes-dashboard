@@ -1,5 +1,7 @@
+import ProcessView from "@/view/Resources/Consumption/process"
+
 export default function page(){
     return (
-        <div>Process route</div>
+        <ProcessView/>
     )
 }

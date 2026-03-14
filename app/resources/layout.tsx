@@ -7,9 +7,9 @@ export default function ResourcesLayout({ children }: { children: ReactNode }) {
   <>
 
 <div className="flex gap-4 ">
-     <div className=" flex-1 flex flex-col  gap-4">
+     <div className=" flex-1 flex flex-col  gap-6">
      <ResourcesTopBar/>
-  <section >{children}</section>
+  <section className="grow">{children}</section>
  </div>
  <ResourcesSideBar/>
 </div>
