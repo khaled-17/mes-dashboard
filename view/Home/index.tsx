@@ -7,11 +7,11 @@ export default function HomeView() {
 
     return (
         <div className="w-fit m-auto">
-            <p className="font-bold text-[#003F5C] text-2xl mb-8">Dashboard</p>
+            <p className="font-bold text-[#003F5C] text-lg mb-4 mt-8">Dashboard</p>
 
-            <div className="flex gap-10">
-                <div className="flex flex-col gap-11">
-                    <div className="flex gap-9">
+            <div className="flex gap-8">
+                <div className="flex flex-col gap-9">
+                    <div className="flex gap-8">
                         <TopCards />
                     </div>
                     <TableCard />

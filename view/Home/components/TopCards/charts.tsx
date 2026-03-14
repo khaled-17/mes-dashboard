@@ -23,15 +23,15 @@ function Charts() {
                 data={chartData1}
                 startAngle={90}
                 endAngle={-180}
-                innerRadius={34}
-                outerRadius={44}
+                innerRadius={28}
+                outerRadius={38}
             >
                 <PolarGrid
                 gridType="circle"
                 radialLines={false}
                 stroke="none"
                 className="first:fill-muted last:fill-background"
-                polarRadius={[45, 34]}
+                polarRadius={[39, 30]}
                 />
                 <RadialBar dataKey="visitors" background cornerRadius={10} />
                 <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
@@ -48,7 +48,7 @@ function Charts() {
                             <tspan
                             x={viewBox.cx}
                             y={viewBox.cy}
-                            className="fill-foreground text-[22px] font-bold"
+                            className="fill-foreground text-[21px] font-bold"
                             >
                             {chartData1[0].visitors.toLocaleString()}%
                             </tspan>
@@ -65,7 +65,7 @@ function Charts() {
                 </PolarRadiusAxis>
             </RadialBarChart>
             </ChartContainer>
-            <p className="font-bold text-[18px] mt-1.5">Availability</p>
+            <p className="font-bold text-[16px] -mt-2">Availability</p>
         </div>
         <div className="flex-1 flex flex-col items-center">
             <ChartContainer config={chartConfig} className="aspect-square h-25">
@@ -73,15 +73,15 @@ function Charts() {
                 data={chartData2}
                 startAngle={90}
                 endAngle={-140}
-                innerRadius={34}
-                outerRadius={44}
+                innerRadius={28}
+                outerRadius={38}
             >
                 <PolarGrid
                 gridType="circle"
                 radialLines={false}
                 stroke="none"
                 className="first:fill-muted last:fill-background"
-                polarRadius={[45, 34]}
+                polarRadius={[39, 30]}
                 />
                 <RadialBar dataKey="visitors" background cornerRadius={10} />
                 <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
@@ -98,7 +98,7 @@ function Charts() {
                             <tspan
                             x={viewBox.cx}
                             y={viewBox.cy}
-                            className="fill-foreground text-[24px] font-bold"
+                            className="fill-foreground text-[21px] font-bold"
                             >
                             {chartData2[0].visitors.toLocaleString()}%
                             </tspan>
@@ -115,7 +115,7 @@ function Charts() {
                 </PolarRadiusAxis>
             </RadialBarChart>
             </ChartContainer>
-            <p className="font-bold text-[18px] mt-1.5">Preformance</p>
+            <p className="font-bold text-[16px] -mt-2">Preformance</p>
         </div>
         <div className="flex-1 flex flex-col items-center">
             <ChartContainer config={chartConfig} className="aspect-square h-25">
@@ -123,15 +123,15 @@ function Charts() {
                 data={chartData3}
                 startAngle={90}
                 endAngle={0}
-                innerRadius={34}
-                outerRadius={44}
+                innerRadius={28}
+                outerRadius={38}
             >
                 <PolarGrid
                 gridType="circle"
                 radialLines={false}
                 stroke="none"
                 className="first:fill-muted last:fill-background"
-                polarRadius={[45, 34]}
+                polarRadius={[39, 30]}
                 />
                 <RadialBar dataKey="visitors" background cornerRadius={10} />
                 <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
@@ -148,7 +148,7 @@ function Charts() {
                             <tspan
                             x={viewBox.cx}
                             y={viewBox.cy}
-                            className="fill-foreground text-[22px] font-bold"
+                            className="fill-foreground text-[21px] font-bold"
                             >
                             {chartData3[0].visitors.toLocaleString()}%
                             </tspan>
@@ -165,7 +165,7 @@ function Charts() {
                 </PolarRadiusAxis>
             </RadialBarChart>
             </ChartContainer>
-            <p className="font-bold text-[18px] mt-1.5">Quality</p>
+            <p className="font-bold text-[16px] -mt-2">Quality</p>
         </div>
     </>
   );

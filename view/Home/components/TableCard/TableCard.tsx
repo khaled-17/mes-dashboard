@@ -26,23 +26,23 @@ function TableCard() {
 
   return (
     <div>
-      <Card className="w-[1400] h-200">
+      <Card className="w-310 h-165">   
         <CardHeader className="px-7 flex items-center justify-between">
           <CardTitle className="flex items-center gap-4 ">
-            <Activity className="w-6 h-6" />
-            <span className="text-[18px]">Current Activity</span>
+            <Activity className="w-5 h-5" />
+            <span className="text-[16px]">Current Activity</span>
           </CardTitle>
 
           <Tabs defaultValue="Function">
-            <TabsList variant="underline" className="border-none gap-8 mr-20">
-              <TabsTrigger value="Function" onClick={() => {setActiveTab("Function")}} className="pb-5 text-[18px]">
-                <SlidersVertical className="w-6! h-6! mr-2" />Function
+            <TabsList variant="underline" className="border-none gap-5 mr-15">
+              <TabsTrigger value="Function" onClick={() => {setActiveTab("Function")}} className="pb-3 text-[16px]">
+                <SlidersVertical className="w-5! h-5! mr-1" />Function
               </TabsTrigger>
-              <TabsTrigger value="Route" onClick={() => {setActiveTab("Route")}} className="pb-5 text-[18px]">
-                <Route className="w-6! h-6! mr-2" />Route
+              <TabsTrigger value="Route" onClick={() => {setActiveTab("Route")}} className="pb-3 text-[16px]">
+                <Route className="w-5! h-5! mr-1" />Route
               </TabsTrigger>
-              <TabsTrigger value="Job Order" onClick={() => {setActiveTab("Job Order")}} className="pb-5 text-[18px]">
-                <Tag className="w-6! h-6! mr-2" />Job Order
+              <TabsTrigger value="Job Order" onClick={() => {setActiveTab("Job Order")}} className="pb-3 text-[16px]">
+                <Tag className="w-5! h-5! mr-1" />Job Order
               </TabsTrigger>
             </TabsList>
           </Tabs>

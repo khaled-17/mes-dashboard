@@ -54,9 +54,9 @@ const CustomYAxisTick = (props: YAxisTickContentProps) => {
 
 const RouteTab = () => {
   return (
-    <div className="w-full flex flex-col gap-12 pt-20 pb-20">
+    <div className="w-full flex flex-col gap-12 pb-10 pt-20">
       {/* Container الـ Chart */}
-      <div className="relative w-full h-112.5">
+      <div className="relative w-full h-80">
         
         {/* الخط الرأسي الفاصل - محطوط بالظبط عند نهاية الـ YAxis */}
         <div className="absolute left-27.5 top-0 bottom-15 w-0.5 bg-slate-400 z-10" />
@@ -66,7 +66,7 @@ const RouteTab = () => {
             data={data}
             layout="vertical"
             margin={{ top: 10, right: 30, left: 0, bottom: 20 }}
-            barSize={10} // سمك الـ Chart
+            barSize={8} // سمك الـ Chart
           >
             <CartesianGrid 
               horizontal={true} 
@@ -89,7 +89,7 @@ const RouteTab = () => {
                   65: "03-30", 80: "04-01", 95: "05-02" 
                 };
                 return (
-                  <text x={x as number} y={(y as number) + 30} fill="#D0D7DA" fontSize={17} fontWeight="600" textAnchor="middle">
+                  <text x={x as number} y={(y as number) + 30} fill="#D0D7DA" fontSize={16} fontWeight="600" textAnchor="middle">
                     {labels[payload.value]}
                   </text>
                 );
@@ -134,7 +134,7 @@ const RouteTab = () => {
 const LegendItem = ({ color, label }: { color: string; label: string }) => (
   <div className="flex items-center gap-2">
     <div style={{ backgroundColor: color }} className="w-12 h-1.5 rounded-full" />
-    <span className="text-[18px] font-bold text-slate-900 whitespace-nowrap">{label}</span>
+    <span className="text-[16px] font-bold text-slate-900 whitespace-nowrap">{label}</span>
   </div>
 );
 

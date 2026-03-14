@@ -47,7 +47,7 @@ export default function RootLayout({
           <div className="  flex flex-col w-screen ">
             <Header />
 
-            <main className=" overflow-y-auto p-8 custom-scrollbar ">
+            <main className=" overflow-y-auto p-8 custom-scrollbar">
               {children}
             </main>
           </div>

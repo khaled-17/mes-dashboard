@@ -129,7 +129,6 @@
   body {
     @apply bg-background text-foreground;
   }
-<<<<<<< HEAD
 }
 
 .progress-animate [data-slot="progress-indicator"] {
@@ -162,4 +161,30 @@
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #002D42;
+}
+
+/* ✅ Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #003F5C2B;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003F5C;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #002d42;
+}
+
+/* ✅ Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #003F5C #003F5C2B;
 }

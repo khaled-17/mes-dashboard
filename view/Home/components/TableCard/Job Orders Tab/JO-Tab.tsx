@@ -27,13 +27,13 @@ const BAR_COLOR = "#0f2e44";
 export default function JobOrderTab() {
 
   return (
-    <div className="w-full h-130 mt-15">
+    <div className="w-full h-95 mt-15 ml-2">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
           layout="vertical"
           margin={{ top: 30, right: 30, left: 20, bottom: 60 }} // زودنا الـ bottom عشان التواريخ والـ top عشان الـ labels
-          barSize={15}
+          barSize={10}
         >
           <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} verticalFill={['#fff']} fillOpacity={0.1} />
           
@@ -41,7 +41,7 @@ export default function JobOrderTab() {
             type="number" 
             axisLine={false}
             tickLine={false}
-            tick={{ fill: '#d1d5db', fontSize: 17, fontWeight: 'bold' }}
+            tick={{ fill: '#d1d5db', fontSize: 16, fontWeight: 'bold' }}
             ticks={[3, 7, 11, 15, 19, 23]}
             tickFormatter={(value) => {
                 if (value === 3) return "Today";
