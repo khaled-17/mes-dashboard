@@ -5,6 +5,7 @@ import SideCard from "./components/sideCard/SideCard";
 
 export default function HomeView() {
 
+    
     return (
         <div className="w-fit m-auto">
             <p className="font-bold text-[#003F5C] text-lg mb-4 mt-8">Dashboard</p>
