@@ -18,7 +18,7 @@ const BottomHeader = () => {
 
   return (
     <>
-      <div className="h-[55px] shadow-md  flex items-center px-8  justify-between  ">
+      <div className="h-13.75 shadow-md  flex items-center px-8  justify-between  ">
         {pathname !== "/planning" &&   "/" ? (
           <>
             <div className=" flex items-center gap-4 ">
