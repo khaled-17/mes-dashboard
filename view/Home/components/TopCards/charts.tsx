@@ -23,15 +23,15 @@ function Charts() {
                 data={chartData1}
                 startAngle={90}
                 endAngle={-180}
-                innerRadius={28}
-                outerRadius={38}
+                innerRadius={35}
+                outerRadius={50}
             >
                 <PolarGrid
                 gridType="circle"
                 radialLines={false}
                 stroke="none"
-                className="first:fill-muted last:fill-background"
-                polarRadius={[39, 30]}
+                className="first:fill-gray-200 last:fill-background"
+                polarRadius={[38, 30]}
                 />
                 <RadialBar dataKey="visitors" background cornerRadius={10} />
                 <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
@@ -73,15 +73,15 @@ function Charts() {
                 data={chartData2}
                 startAngle={90}
                 endAngle={-140}
-                innerRadius={28}
-                outerRadius={38}
+                innerRadius={35}
+                outerRadius={50}
             >
                 <PolarGrid
                 gridType="circle"
                 radialLines={false}
                 stroke="none"
-                className="first:fill-muted last:fill-background"
-                polarRadius={[39, 30]}
+                className="first:fill-gray-200 last:fill-background"
+                polarRadius={[38, 30]}
                 />
                 <RadialBar dataKey="visitors" background cornerRadius={10} />
                 <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
@@ -123,15 +123,15 @@ function Charts() {
                 data={chartData3}
                 startAngle={90}
                 endAngle={0}
-                innerRadius={28}
-                outerRadius={38}
+                innerRadius={35}
+                outerRadius={50}
             >
                 <PolarGrid
                 gridType="circle"
                 radialLines={false}
                 stroke="none"
-                className="first:fill-muted last:fill-background"
-                polarRadius={[39, 30]}
+                className="first:fill-gray-200 last:fill-background"
+                polarRadius={[38, 30]}
                 />
                 <RadialBar dataKey="visitors" background cornerRadius={10} />
                 <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
