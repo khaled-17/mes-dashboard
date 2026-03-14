@@ -129,6 +129,31 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  html {
+    @apply font-sans;
+}
+}
+
+
+/* Chrome / Edge */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #003F5C2B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003F5C;
+  border-radius: 10px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #003F5C #003F5C2B;
 }
 
 .progress-animate [data-slot="progress-indicator"] {
