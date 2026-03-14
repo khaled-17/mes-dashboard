@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 const ResourcesTopBar = () => {
   const path = usePathname();
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between items-center">
       <BreadCrumbComponent />
       <div className="flex gap-4">
         {path.includes("consumption") && <TappedNavigationBar />}
