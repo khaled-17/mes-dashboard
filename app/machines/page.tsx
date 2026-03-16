@@ -20,7 +20,7 @@ export default function Machines() {
           "hover:opacity-90 transition-opacity cursor-pointer",
         )}
         style={{
-          boxShadow: "0px 3px 6px #00000029", 
+          boxShadow: "0px 3px 6px #00000029",
         }}
       >
         <Eye className="w-[17px] h-[11px] text-white stroke-[2px]" />
@@ -28,7 +28,7 @@ export default function Machines() {
         <span
           className={cn(
             "text-[14px] font-medium leading-[18px] tracking-[0.02em]",
-            "font-sans text-white uppercase", 
+            "font-sans text-white uppercase",
           )}
         >
           View Properties
