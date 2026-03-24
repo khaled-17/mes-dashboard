@@ -1,6 +1,6 @@
 "use client";
 import ConsumptionPage from "@/view/Resources/Consumption/ConsumptionPage";
-import ProductScrap from "@/view/Resources/ProductScrap/ProductScrap";
+import ProductScrap from "@/view/Resources/Product&Scrap/ProductScrap";
 import SupplyPage from "@/view/Resources/Supply/SupplyPage";
 import WeightPage from "@/view/Resources/Weight/WeightPage";
 

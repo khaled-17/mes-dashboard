@@ -8,9 +8,21 @@ import {
   YAxis,
   CartesianGrid,
   ResponsiveContainer,
-  YAxisTickContentProps,
-  BarShapeProps,
 } from "recharts";
+
+type YAxisTickProps = {
+  x?: number | string;
+  y?: number | string;
+  payload?: { value?: string };
+};
+
+type BarShapeLikeProps = {
+  x?: number;
+  y?: number;
+  width?: number;
+  height?: number;
+  fill?: string;
+};
 
 const data = [
   { name: "Route 05", gap: 65, purple: 15, amber: 25 },
@@ -21,24 +33,24 @@ const data = [
 ];
 
 // 1. تخصيص الـ Bar مع البوردر الأسود السفلي
-const CustomBar = (props: BarShapeProps) => {
-  const { x, y, width, height, fill } = props;
-  if (fill === "transparent") return null;
+const CustomBar = (props: unknown) => {
+  const { x, y, width, height, fill } = (props as BarShapeLikeProps) ?? {};
+  if (fill === "transparent") return <g />;
 
   return (
     <g>
-      <rect x={x} y={y} width={width} height={height} fill={fill} rx={2} />
+      <rect x={x ?? 0} y={y ?? 0} width={width ?? 0} height={height ?? 0} fill={fill} rx={2} />
       {/* الخط الأسود اللي تحت */}
-      <rect x={x} y={y + height + 2} width={width} height={3.5} fill="#0f172a" />
+      <rect x={x ?? 0} y={(y ?? 0) + (height ?? 0) + 2} width={width ?? 0} height={3.5} fill="#0f172a" />
     </g>
   );
 };
 
 // 2. تخصيص شكل أسماء الـ Routes عشان تطلع Bold وعلى سطر واحد
-const CustomYAxisTick = (props: YAxisTickContentProps) => {
+const CustomYAxisTick = (props: YAxisTickProps) => {
   const { x, y, payload } = props;
   return (
-    <g transform={`translate(${x},${y})`}>
+    <g transform={`translate(${x ?? 0},${y ?? 0})`}>
       <text
         x={-10} // المسافة بين النص والخط الرأسي
         y={5}
@@ -46,7 +58,7 @@ const CustomYAxisTick = (props: YAxisTickContentProps) => {
         textAnchor="end"
         className="text-[16px] font-extrabold uppercase"
       >
-        {payload.value}
+        {payload?.value ?? ""}
       </text>
     </g>
   );
