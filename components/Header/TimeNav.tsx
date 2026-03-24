@@ -26,7 +26,7 @@ const TimeNav = () => {
           setSelectedDate("Today");
           setDate(undefined);
         }}
-        className={`${selectedDate === "Today" ? "text-primary bg-blue-400/50" : "text-gray-400 bg-transparent"} py-2 px-6 rounded-md text-sm font-semibold cursor-pointer `}
+        className={`${selectedDate === "Today" ? "text-primary bg-blue-400/50" : "text-gray-400 bg-transparent"} py-2 px-6 rounded-md text-[16px] font-semibold cursor-pointer `}
       >
         Today
       </Button>
@@ -35,7 +35,7 @@ const TimeNav = () => {
           setSelectedDate("Yesterday");
           setDate(undefined);
         }}
-        className={`${selectedDate === "Yesterday" ? "text-primary bg-blue-400/50" : "text-gray-400 bg-transparent"} py-2 px-6  text-sm font-semibold cursor-pointer `}
+        className={`${selectedDate === "Yesterday" ? "text-primary bg-blue-400/50" : "text-gray-400 bg-transparent"} py-2 px-6  text-[16px] font-semibold cursor-pointer `}
       >
         Yesterday
       </Button>
@@ -44,7 +44,7 @@ const TimeNav = () => {
           setSelectedDate("Last Week");
           setDate(undefined);
         }}
-        className={`${selectedDate === "Last Week" ? "text-primary bg-blue-300/50" : "text-gray-400 bg-transparent"} py-2 px-6 rounded-md text-sm font-semibold  cursor-pointer`}
+        className={`${selectedDate === "Last Week" ? "text-primary bg-blue-300/50" : "text-gray-400 bg-transparent"} py-2 px-6 rounded-md text-[16px] font-semibold  cursor-pointer`}
       >
         Last Week
       </Button>
@@ -56,15 +56,16 @@ const TimeNav = () => {
             className={`justify-between    bg-transparent text-md ${date ? "text-primary bg-blue-400/50" : "text-gray-400 "}`}
           >
             {date && format(date, "PPP")}
-            <CalendarIcon />
+            <CalendarIcon className="w-6! h-6!"/>
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
+        <PopoverContent className="w-auto p-4" align="start">
           <Calendar
             mode="single"
             selected={date}
             onSelect={onChangeHandler}
             defaultMonth={date}
+            className="scale-110"
           />
         </PopoverContent>
       </Popover>

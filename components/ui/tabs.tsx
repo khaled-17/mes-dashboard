@@ -31,6 +31,7 @@ const tabsListVariants = cva(
       variant: {
         default: "bg-muted",
         line: "gap-1 bg-transparent",
+        underline: "border-b border-border "
       },
     },
     defaultVariants: {
@@ -67,6 +68,20 @@ function TabsTrigger({
         "group-data-[variant=line]/tabs-list:bg-transparent group-data-[variant=line]/tabs-list:data-active:bg-transparent dark:group-data-[variant=line]/tabs-list:data-active:border-transparent dark:group-data-[variant=line]/tabs-list:data-active:bg-transparent",
         "data-active:bg-background data-active:text-foreground dark:data-active:border-input dark:data-active:bg-input/30 dark:data-active:text-foreground",
         "after:absolute after:bg-foreground after:opacity-0 after:transition-opacity group-data-horizontal/tabs:after:inset-x-0 group-data-horizontal/tabs:after:bottom-[-5px] group-data-horizontal/tabs:after:h-0.5 group-data-vertical/tabs:after:inset-y-0 group-data-vertical/tabs:after:-right-1 group-data-vertical/tabs:after:w-0.5 group-data-[variant=line]/tabs-list:data-active:after:opacity-100",
+        // karim-my variant used in table in dashboard page (underline)
+        "group-data-[variant=underline]/tabs-list:text-gray-400",
+        "group-data-[variant=underline]/tabs-list:font-bold",
+        "group-data-[variant=underline]/tabs-list:hover:text-gray-600",
+        "group-data-[variant=underline]/tabs-list:data-[state=active]:text-blue-600",
+
+        "group-data-[variant=underline]/tabs-list:after:absolute",
+        "group-data-[variant=underline]/tabs-list:cursor-pointer",
+        "group-data-[variant=underline]/tabs-list:after:inset-x-0",
+        "group-data-[variant=underline]/tabs-list:after:bottom-[-6px]",
+        "group-data-[variant=underline]/tabs-list:after:h-[3px]",
+        "group-data-[variant=underline]/tabs-list:after:bg-blue-600",
+        "group-data-[variant=underline]/tabs-list:after:opacity-0",
+        "group-data-[variant=underline]/tabs-list:data-[state=active]:after:opacity-100",
         className
       )}
       {...props}

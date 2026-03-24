@@ -16,31 +16,31 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const pages = [
-    { name: "Dashboard", path: "/", icon: <LayoutGrid className="w-5 h-5" /> },
+    { name: "Dashboard", path: "/", icon: <LayoutGrid className="w-7 h-7" /> },
     {
       name: "Resources",
       path: "/resources",
-      icon: <Home className="w-5 h-5" />,
+      icon: <Home className="w-7 h-7" />,
     },
     {
       name: "Manufacturing",
       path: "/manufacturing",
-      icon: <Forklift className="w-5 h-5" />,
+      icon: <Forklift className="w-7 h-7" />,
     },
     {
       name: "Machines",
       path: "/machines",
-      icon: <WrenchIcon className="w-5 h-5" />,
+      icon: <WrenchIcon className="w-7 h-7" />,
     },
     {
       name: "Planning",
       path: "/planning",
-      icon: <RefreshCcw className="w-5 h-5" />,
+      icon: <RefreshCcw className="w-7 h-7" />,
     },
     {
       name: "Issues",
       path: "/issues",
-      icon: <TriangleAlert className="w-5 h-5" />,
+      icon: <TriangleAlert className="w-7 h-7" />,
     },
   ];
 
@@ -48,9 +48,9 @@ export default function Sidebar() {
     {
       name: "Settings",
       path: "/settings",
-      icon: <Settings className="w-5 h-5" />,
+      icon: <Settings className="w-7 h-7" />,
     },
-    { name: "Logout", path: "/logout", icon: <LogOut className="w-5 h-5" /> },
+    { name: "Logout", path: "/logout", icon: <LogOut className="w-7 h-7" /> },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -58,7 +58,7 @@ export default function Sidebar() {
   return (
     <aside className="w-64 h-screen bg-linear-to-b from-blue-600 to-blue-700 text-white flex flex-col px-6 py-8 shadow-lg sticky top-0">
       {/* Logo Section */}
-      <div className="flex items-center justify-center  gap-4 mb-12 pb-6 ">
+      <div className="flex items-center justify-center  gap-4 mb-20 pb-6 ">
         <div className="flex gap-1">
           <div className="w-3 h-6 bg-white rounded-sm opacity-90"></div>
           <div className="w-3 h-6 bg-white rounded-sm opacity-70"></div>
