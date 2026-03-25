@@ -39,9 +39,22 @@ const CustomBar = (props: unknown) => {
 
   return (
     <g>
-      <rect x={x ?? 0} y={y ?? 0} width={width ?? 0} height={height ?? 0} fill={fill} rx={2} />
+      <rect
+        x={x ?? 0}
+        y={y ?? 0}
+        width={width ?? 0}
+        height={height ?? 0}
+        fill={fill}
+        rx={2}
+      />
       {/* الخط الأسود اللي تحت */}
-      <rect x={x ?? 0} y={(y ?? 0) + (height ?? 0) + 2} width={width ?? 0} height={3.5} fill="#0f172a" />
+      <rect
+        x={x ?? 0}
+        y={(y ?? 0) + (height ?? 0) + 2}
+        width={width ?? 0}
+        height={3.5}
+        fill="#0f172a"
+      />
     </g>
   );
 };
@@ -69,7 +82,6 @@ const RouteTab = () => {
     <div className="w-full flex flex-col gap-12 pb-10 pt-20">
       {/* Container الـ Chart */}
       <div className="relative w-full h-80">
-        
         {/* الخط الرأسي الفاصل - محطوط بالظبط عند نهاية الـ YAxis */}
         <div className="absolute left-27.5 top-0 bottom-15 w-0.5 bg-slate-400 z-10" />
 
@@ -80,11 +92,11 @@ const RouteTab = () => {
             margin={{ top: 10, right: 30, left: 0, bottom: 20 }}
             barSize={8} // سمك الـ Chart
           >
-            <CartesianGrid 
-              horizontal={true} 
-              vertical={false} 
-              stroke="#D0D7DA" 
-              strokeWidth={.5} 
+            <CartesianGrid
+              horizontal={true}
+              vertical={false}
+              stroke="#D0D7DA"
+              strokeWidth={0.5}
             />
 
             {/* X-Axis (التواريخ) */}
@@ -96,12 +108,23 @@ const RouteTab = () => {
               ticks={[15, 35, 50, 65, 80, 95]}
               tick={(props) => {
                 const { x, y, payload } = props;
-                const labels: Record<number, string> = { 
-                  15: "Today", 35: "03-28", 50: "03-29", 
-                  65: "03-30", 80: "04-01", 95: "05-02" 
+                const labels: Record<number, string> = {
+                  15: "Today",
+                  35: "03-28",
+                  50: "03-29",
+                  65: "03-30",
+                  80: "04-01",
+                  95: "05-02",
                 };
                 return (
-                  <text x={x as number} y={(y as number) + 30} fill="#D0D7DA" fontSize={16} fontWeight="600" textAnchor="middle">
+                  <text
+                    x={x as number}
+                    y={(y as number) + 30}
+                    fill="#D0D7DA"
+                    fontSize={16}
+                    fontWeight="600"
+                    textAnchor="middle"
+                  >
                     {labels[payload.value]}
                   </text>
                 );
@@ -121,9 +144,24 @@ const RouteTab = () => {
             {/* Bars */}
             <Bar dataKey="gap" stackId="a" fill="transparent" />
             <Bar dataKey="lime" stackId="a" fill="#9DC44D" shape={CustomBar} />
-            <Bar dataKey="orange" stackId="a" fill="#F27444" shape={CustomBar} />
-            <Bar dataKey="emerald" stackId="a" fill="#26C281" shape={CustomBar} />
-            <Bar dataKey="purple" stackId="a" fill="#7D4B8E" shape={CustomBar} />
+            <Bar
+              dataKey="orange"
+              stackId="a"
+              fill="#F27444"
+              shape={CustomBar}
+            />
+            <Bar
+              dataKey="emerald"
+              stackId="a"
+              fill="#26C281"
+              shape={CustomBar}
+            />
+            <Bar
+              dataKey="purple"
+              stackId="a"
+              fill="#7D4B8E"
+              shape={CustomBar}
+            />
             <Bar dataKey="cyan" stackId="a" fill="#33C2E1" shape={CustomBar} />
             <Bar dataKey="amber" stackId="a" fill="#FFB319" shape={CustomBar} />
           </BarChart>
@@ -145,8 +183,13 @@ const RouteTab = () => {
 
 const LegendItem = ({ color, label }: { color: string; label: string }) => (
   <div className="flex items-center gap-2">
-    <div style={{ backgroundColor: color }} className="w-12 h-1.5 rounded-full" />
-    <span className="text-[16px] font-bold text-slate-900 whitespace-nowrap">{label}</span>
+    <div
+      style={{ backgroundColor: color }}
+      className="w-12 h-1.5 rounded-full"
+    />
+    <span className="text-[16px] font-bold text-slate-900 whitespace-nowrap">
+      {label}
+    </span>
   </div>
 );
 

@@ -96,17 +96,17 @@ const ResourcesPage = () => {
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="min-w-0 space-y-4">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <SectionBreadcrumbs />
 
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center">
           <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-opacity hover:opacity-90">
             <Plus className="h-4 w-4" />
             ADD NEW
           </button>
 
-          <label className="relative block min-w-72">
+          <label className="relative block w-full min-w-0 sm:w-72">
             <span className="sr-only">Search materials by name or type</span>
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
@@ -180,12 +180,12 @@ const ResourcesPage = () => {
 
           <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 p-5">
-              <div className="flex items-center gap-2 text-sm font-medium text-slate-700">
+              <div className="min-w-0 flex items-center gap-2 text-sm font-medium text-slate-700">
                 <Leaf className="h-4 w-4 text-slate-500" />
-                Material Supplier Records
+                <span className="truncate">Material Supplier Records</span>
               </div>
 
-              <div className="flex items-center gap-6 text-sm">
+              <div className="flex flex-wrap items-center gap-4 text-sm">
                 <button
                   onClick={() => setRecordsView("list")}
                   className={`inline-flex items-center gap-2 border-b-2 pb-2 font-semibold transition-colors ${
@@ -214,18 +214,18 @@ const ResourcesPage = () => {
 
             {recordsView === "list" ? (
               <div className="px-5 py-4">
-                <label className="relative block min-w-72">
+                <label className="relative block w-full min-w-0 sm:w-72">
                   <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                   <input
                     type="text"
                     aria-label="Search material supplier records by material name or type"
                     placeholder="Search by Material Name - Type"
-                    className="h-10 w-1/4 border-b border-slate-200 bg-white pl-9 pr-3 text-sm outline-none transition-colors "
+                    className="h-10 w-full border-b border-slate-200 bg-white pl-9 pr-3 text-sm outline-none transition-colors"
                   />
                 </label>
 
                 <div className="overflow-x-auto mt-4">
-                  <table className="text-center w-full text-sm">
+                  <table className="w-full table-auto text-center text-sm">
                     <thead>
                       <tr className=" text-xs text-slate-500">
                         <th className="py-2 font-semibold">Material Type</th>
@@ -242,12 +242,12 @@ const ResourcesPage = () => {
                           key={`${material.type}-${index}`}
                           className="border-t border-slate-100 text-slate-600"
                         >
-                          <td className=" text-center ">
-                            <div className=" gap-6 flex items-center ">
+                          <td className="px-2 text-left">
+                            <div className="flex min-w-0 items-center gap-3">
                               <span
-                                className={`h-2.5 w-2.5 rounded-full  ${material.color}`}
+                                className={`h-2.5 w-2.5 shrink-0 rounded-full ${material.color}`}
                               />
-                              {material.type}
+                              <span className="truncate">{material.type}</span>
                             </div>
                           </td>
                           <td className="py-3 ">{material.weight}</td>
@@ -264,15 +264,15 @@ const ResourcesPage = () => {
             ) : (
               <div className="p-5">
                 <div className="overflow-x-auto">
-                  <div className="min-w-175">
+                  <div className="min-w-[760px] lg:min-w-0">
                     <div className="mb-4 border-b border-slate-200" />
 
                     {profileRows.map((row, rowIndex) => (
                       <div
                         key={`${row.label}-${rowIndex}`}
-                        className="grid grid-cols-[130px_1fr] items-center gap-3"
+                        className="grid grid-cols-[100px_1fr] items-center gap-3 sm:grid-cols-[130px_1fr]"
                       >
-                        <p className="text-3.5 font-semibold text-slate-700">
+                        <p className="truncate text-sm font-semibold text-slate-700 sm:text-base">
                           {row.label}
                         </p>
 
@@ -299,9 +299,9 @@ const ResourcesPage = () => {
                       </div>
                     ))}
 
-                    <div className="grid grid-cols-[130px_1fr] items-center gap-3 pt-2">
+                    <div className="grid grid-cols-[100px_1fr] items-center gap-3 pt-2 sm:grid-cols-[130px_1fr]">
                       <div />
-                      <div className="grid grid-cols-6 text-center text-2.5 font-medium text-slate-400">
+                      <div className="grid grid-cols-6 text-center text-[11px] font-medium text-slate-400 sm:text-xs">
                         <span>Today</span>
                         <span>03-28</span>
                         <span>03-29</span>

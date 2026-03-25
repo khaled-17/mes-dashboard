@@ -56,9 +56,9 @@ export default function Sidebar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <aside className="w-64 h-screen bg-linear-to-b from-blue-600 to-blue-700 text-white flex flex-col px-6 py-8 shadow-lg sticky top-0">
+    <aside className="w-64 shrink-0 h-screen overflow-y-auto bg-linear-to-b from-blue-600 to-blue-700 text-white flex flex-col px-6 py-8 shadow-lg sticky top-0">
       {/* Logo Section */}
-      <div className="flex items-center justify-center  gap-4 mb-20 pb-6 ">
+      <div className="flex items-center justify-center gap-4 mb-8 pb-2">
         <div className="flex gap-1">
           <div className="w-3 h-6 bg-white rounded-sm opacity-90"></div>
           <div className="w-3 h-6 bg-white rounded-sm opacity-70"></div>
@@ -68,7 +68,7 @@ export default function Sidebar() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="flex flex-col gap-3 flex-1">
+      <nav className="flex min-h-0 flex-col gap-3 flex-1">
         {pages.map((item) => (
           <Link
             key={item.path}
@@ -86,7 +86,7 @@ export default function Sidebar() {
       </nav>
 
       {/* User Actions */}
-      <nav className="flex flex-col gap-3  pt-6">
+      <nav className="mt-auto flex flex-col gap-3 pt-6">
         {userActions.map((item) => (
           <Link
             key={item.path}
