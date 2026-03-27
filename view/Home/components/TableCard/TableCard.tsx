@@ -30,43 +30,45 @@ function TableCard() {
             <span className="text-[16px]">Current Activity</span>
           </CardTitle>
 
-          <Tabs defaultValue="Function">
-            <TabsList
-              variant="underline"
-              className="mr-0 flex-wrap gap-2 border-none sm:gap-4"
-            >
-              <TabsTrigger
-                value="Function"
-                onClick={() => {
-                  setActiveTab("Function");
-                }}
-                className="pb-3 text-[16px]"
+          <div className="pr-12">
+            <Tabs defaultValue="Function">
+              <TabsList
+                variant="underline"
+                className="mr-0 flex-wrap gap-2 border-none sm:gap-4"
               >
-                <SlidersVertical className="w-5! h-5! mr-1" />
-                Function
-              </TabsTrigger>
-              <TabsTrigger
-                value="Route"
-                onClick={() => {
-                  setActiveTab("Route");
-                }}
-                className="pb-3 text-[16px]"
-              >
-                <Route className="w-5! h-5! mr-1" />
-                Route
-              </TabsTrigger>
-              <TabsTrigger
-                value="Job Order"
-                onClick={() => {
-                  setActiveTab("Job Order");
-                }}
-                className="pb-3 text-[16px]"
-              >
-                <Tag className="w-5! h-5! mr-1" />
-                Job Order
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
+                <TabsTrigger
+                  value="Function"
+                  onClick={() => {
+                    setActiveTab("Function");
+                  }}
+                  className="pb-3 text-[16px]"
+                >
+                  <SlidersVertical className="w-5! h-5! mr-1" />
+                  Function
+                </TabsTrigger>
+                <TabsTrigger
+                  value="Route"
+                  onClick={() => {
+                    setActiveTab("Route");
+                  }}
+                  className="pb-3 text-[16px]"
+                >
+                  <Route className="w-5! h-5! mr-1" />
+                  Route
+                </TabsTrigger>
+                <TabsTrigger
+                  value="Job Order"
+                  onClick={() => {
+                    setActiveTab("Job Order");
+                  }}
+                  className="pb-3 text-[16px]"
+                >
+                  <Tag className="w-5! h-5! mr-1" />
+                  Job Order
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
         </CardHeader>
 
         <CardContent className="min-w-0 overflow-x-auto px-4 pb-6 pt-4 sm:px-6 lg:px-10">
