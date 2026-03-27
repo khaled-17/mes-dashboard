@@ -6,7 +6,7 @@ import Charts from "./charts";
 export default function TopCards() {
   return (
     <>
-      <Card className="min-w-0 flex-1 basis-full sm:basis-[calc(50%-0.75rem)] xl:basis-[calc(33.333%-1rem)]">
+      <Card className="min-w-0 h-52 flex-1 basis-full sm:basis-[calc(50%-0.75rem)] xl:basis-[calc(27%-1rem)]">
         <CardHeader className="px-6">
           <CardTitle className="flex items-center gap-3 ">
             <ScanBarcode className="w-5 h-5" />
@@ -45,11 +45,11 @@ export default function TopCards() {
           </div>
 
           {/* Progress Bar */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex items-center gap-4">
             <Progress
               value={65}
               style={{ "--progress": 65 } as React.CSSProperties}
-              className="h-2 w-full max-w-60 bg-border progress-animate"
+              className="h-2 w-full bg-border progress-animate"
             />
 
             <span className="text-[23px] font-bold text-slate-900 -mt-1.75">
@@ -59,7 +59,7 @@ export default function TopCards() {
         </CardContent>
       </Card>
 
-      <Card className="min-w-0 flex-1 basis-full lg:basis-[calc(50%-0.75rem)] xl:basis-[calc(33.333%-1rem)]">
+      <Card className="min-w-0 h-52 flex-1 basis-full lg:basis-[calc(50%-0.75rem)] xl:basis-[calc(40%-1rem)]">
         <CardHeader className="px-6">
           <CardTitle className="flex items-center gap-3 ">
             <SlidersHorizontal className="w-5 h-5" />
@@ -72,7 +72,7 @@ export default function TopCards() {
         </CardContent>
       </Card>
 
-      <Card className="min-w-0 flex-1 basis-full sm:basis-[calc(50%-0.75rem)] xl:basis-[calc(33.333%-1rem)]">
+      <Card className="min-w-0 h-52 flex-1 basis-full sm:basis-[calc(50%-0.75rem)] xl:basis-[calc(27%-1rem)]">
         <CardHeader className="px-6">
           <CardTitle className="flex items-center gap-4 ">
             <Leaf className="w-5 h-5" />
@@ -111,11 +111,11 @@ export default function TopCards() {
           </div>
 
           {/* Progress Bar */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex items-center gap-4">
             <Progress
               value={75}
               style={{ "--progress": 75 } as React.CSSProperties}
-              className="h-2 w-full max-w-60 bg-border progress-animate"
+              className="h-2 w-full bg-border progress-animate"
             />
 
             <span className="text-[23px] font-bold text-slate-900 -mt-1.75">
