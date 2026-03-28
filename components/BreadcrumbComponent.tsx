@@ -1,49 +1,57 @@
-"use client"
-import { usePathname } from "next/navigation";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "./ui/breadcrumb";
-import { Fragment } from "react/jsx-runtime";
+"use client";
 
-/**
- * Automatically generates breadcrumb navigation based on the current URL pathname.
- * Each segment is converted from kebab-case and separated by backslash separators,
- * with clickable links to navigate to parent routes.
- * 
- * @returns {JSX.Element} A breadcrumb navigation component displaying the current route hierarchy
- * 
- * @example
- * // If the current path is "/machines/production-line-1"
- * // This will render:
- * // [Machines] \ [Production Line 1]
- * // 
- * // Both "Machines" and "Production Line 1" are clickable links that navigate to their respective routes
- * <BreadCrumbComponent />
- * 
- * @remarks
- * - Automatically detects the current pathname using Next.js usePathname hook
- * - Converts kebab-case and ampersands to human-readable text (e.g., "machine-name" → "Machine Name")
- * - Each breadcrumb segment links to its corresponding route
- * - The final segment is always the current page
- */
-export function BreadCrumbComponent() {
-    const path = usePathname();
-    const segments = path.split("/").filter(Boolean)
-    return (
-        <Breadcrumb>
-            <BreadcrumbList>
-                {segments.map((seg, index) => {
-                    const displayedSeg = seg.split("-").map(w => w[0]?.toUpperCase() + w.slice(1)).join(" ")
-                        .split("&").map(w => w[0]?.toUpperCase() + w.slice(1)).join(" & ");
-                    return (
-                        <Fragment key={index}>
-                            <BreadcrumbItem >
-                                <BreadcrumbLink href={`/${segments.slice(0, index + 1).join("/")}`} className="text-[#003F5C] font-semibold">{displayedSeg}</BreadcrumbLink>
-                            </BreadcrumbItem>
-                            {segments.length-1 > index && <BreadcrumbSeparator className="text-[#003F5C] text-[20px] leading-6.75 font-semibold w-2">\</BreadcrumbSeparator>}
-                        </Fragment>
-                    )
-                })
-                }
-            </BreadcrumbList>
-        </Breadcrumb>
-    )
-}
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
+  getActiveTabFromPathname,
+  getSectionKeyFromPathname,
+  SECTION_NAVIGATION,
+} from "@/lib/section-navigation";
+
+const BreadcrumbsComponent = () => {
+  const pathname = usePathname();
+
+  const sectionKey = getSectionKeyFromPathname(pathname);
+
+  if (!sectionKey) {
+    return null;
+  }
+
+  const sectionTab = SECTION_NAVIGATION[sectionKey];
+  const activeTab = getActiveTabFromPathname(pathname);
+
+  return (
+    <Breadcrumb>
+      <BreadcrumbList className="text-sm text-slate-600">
+        <BreadcrumbItem>
+          <BreadcrumbLink asChild>
+            <Link
+              href={sectionTab.tabs[0].href}
+              className="font-semibold text-slate-700"
+            >
+              {sectionTab.sectionLabel}
+            </Link>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbSeparator className="text-slate-500">\</BreadcrumbSeparator>
+
+        <BreadcrumbItem>
+          <BreadcrumbPage className="font-semibold text-slate-700">
+            {activeTab?.label ?? sectionTab.tabs[0].label}
+          </BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+};
+
+export default BreadcrumbsComponent;

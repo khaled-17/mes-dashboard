@@ -3,12 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  getActiveTabFromPathname,
   getSectionKeyFromPathname,
   SECTION_NAVIGATION,
 } from "@/lib/section-navigation";
 
 const TopHeader = () => {
   const pathname = usePathname();
+  const normalizedPathname =
+    pathname !== "/" && pathname.endsWith("/")
+      ? pathname.slice(0, -1)
+      : pathname;
   const sectionKey = getSectionKeyFromPathname(pathname);
 
   if (!sectionKey) {
@@ -16,15 +21,16 @@ const TopHeader = () => {
   }
 
   const tabs = SECTION_NAVIGATION[sectionKey].tabs;
+  const activeTab = getActiveTabFromPathname(normalizedPathname);
 
   return (
     <nav
       className=" bg-white border border-gray-200"
       aria-label="Main navigation"
     >
-      <ul className="flex justify-between h-[50px] px-6 gap-8 list-none m-0 p-0 overflow-x-auto">
+      <ul className="flex justify-between h-12 px-6 gap-8 list-none m-0 p-0 overflow-x-auto">
         {tabs.map((tab) => {
-          const isActive = pathname === tab.href;
+          const isActive = activeTab?.href === tab.href;
           return (
             <li key={tab.href} className="relative h-full flex items-end">
               <Link

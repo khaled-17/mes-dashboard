@@ -53,7 +53,13 @@ export default function Sidebar() {
     { name: "Logout", path: "/logout", icon: <LogOut className="w-7 h-7" /> },
   ];
 
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
 
   return (
     <aside className="w-64 shrink-0 h-screen overflow-y-auto bg-linear-to-b from-blue-600 to-blue-700 text-white flex flex-col px-6 py-8 shadow-lg sticky top-0">
