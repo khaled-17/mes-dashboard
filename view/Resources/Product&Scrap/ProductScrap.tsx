@@ -1,11 +1,12 @@
-import SectionBreadcrumbs from '@/components/SectionBreadcrumbs'
+import BreadcrumbsComponent from "@/components/BreadcrumbComponent";
+
 
 const ProductScrap = () => {
   return (
     <div>
-      <SectionBreadcrumbs />
+      <BreadcrumbsComponent />
     </div>
-  )
-}
+  );
+};
 
-export default ProductScrap
+export default ProductScrap;

@@ -15,6 +15,7 @@ export const SECTION_NAVIGATION: Record<SectionKey, SectionConfig> = {
     sectionLabel: "Resources",
     tabs: [
       { label: "TIME LINE", href: "/resources" },
+      { label: "SUPPLY", href: "/resources/supply" },
       { label: "WEIGHT", href: "/resources/weight" },
       { label: "CONSUMPTION", href: "/resources/consumption" },
       { label: "PRODUCT & SCRAP", href: "/resources/product-scrap" },

@@ -1,9 +1,9 @@
-import SectionBreadcrumbs from "@/components/SectionBreadcrumbs";
+import BreadcrumbsComponent from "@/components/BreadcrumbComponent";
 
 const ConsumptionPage = () => {
   return (
     <div>
-      <SectionBreadcrumbs />
+      <BreadcrumbsComponent />
     </div>
   );
 };

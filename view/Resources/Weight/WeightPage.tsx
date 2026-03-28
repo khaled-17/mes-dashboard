@@ -1,9 +1,9 @@
-import SectionBreadcrumbs from "@/components/SectionBreadcrumbs";
+import BreadcrumbsComponent from "@/components/BreadcrumbComponent";
 
 const WeightPage = () => {
   return (
     <div>
-      <SectionBreadcrumbs />
+      <BreadcrumbsComponent />
 
       <h1>Weight Page</h1>
     </div>

@@ -1,9 +1,10 @@
-import SectionBreadcrumbs from "@/components/SectionBreadcrumbs";
+import BreadcrumbsComponent from "@/components/BreadcrumbComponent";
+
 
 const MachinesPage = () => {
   return (
     <div className="space-y-4">
-      <SectionBreadcrumbs />
+      <BreadcrumbsComponent />
 
       <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
         <h1 className="text-2xl font-bold text-slate-800">Machines Overview</h1>

@@ -26,9 +26,6 @@ const ResourcesPageTab = () => {
   if (tab === "product-scrap") {
     return <ProductScrap />;
   }
-
-  // Fallback for unknown or missing `tab` values
-  return <SupplyPage />;
 };
 
 export default ResourcesPageTab;
