@@ -1,25 +1,24 @@
-import StatCard from "./components/StatCard";
+// import TopCards from "./components/TopCards/TopCards";
+import TopCards from "@/view/Home/components/TopCards/TopCards";
+import TableCard from "./components/TableCard/TableCard";
+import SideCard from "./components/side Card/SideCard";
 
 export default function HomeView() {
-    const stats = [
-        { title: "Active Users", value: "120", color: "bg-primary" },
-        { title: "New Reports", value: "15", color: "bg-secondary" },
-        { title: "Pending Requests", value: "8", color: "bg-tertiary" },
-        { title: "Total Visits", value: "3,450", color: "bg-green-500" },
-    ];
+  return (
+    <div className="mx-auto w-full max-w-400 min-w-0">
+      <p className="mb-4 mt-2 text-lg font-bold text-[#003F5C] sm:mt-4">
+        Dashboard
+      </p>
 
-    return (
-        <div className="flex flex-col gap-6">
-            <h1 className="text-3xl font-bold text-gray-800">Home</h1>
-            <p className="text-gray-600">
-                Welcome to the MES Dashboard. You can navigate between pages using the sidebar.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                {stats.map((stat, index) => (
-                    <StatCard key={index} {...stat} />
-                ))}
-            </div>
+      <div className="flex min-w-0 flex-col gap-7 xl:flex-row">
+        <div className="flex min-w-0 flex-1 flex-col gap-9">
+          <div className="flex min-w-0 flex-wrap gap-8 lg:gap-7">
+            <TopCards />
+          </div>
+          <TableCard />
         </div>
-    );
+        <SideCard />
+      </div>
+    </div>
+  );
 }

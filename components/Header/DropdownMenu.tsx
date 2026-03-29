@@ -36,13 +36,13 @@ const FactoryDropdownMenu = () => {
           className="flex items-center gap-2 bg-blue-400/50 hover:bg-blue-100 p-1.5 px-3 rounded-md transition-colors border border-blue-200 "
         >
           <div className="w-4 h-4 flex items-center justify-center">
-            <Hotel className="w-6 h-6 text-primary" />
+            <Hotel className="w-6! h-6! text-primary" />
           </div>
 
-          <span className="text-primary font-semibold text-sm">
+          <span className="text-primary font-semibold text-[17px] px-4">
             {selectedFactory.name}
           </span>
-          <ChevronDown className="w-2.5 h-2.5 transition-transform duration-200" />
+          <ChevronDown className="w-5! h-5! transition-transform duration-200" />
         </Button>
       </DropdownMenuTrigger>
 
@@ -50,7 +50,7 @@ const FactoryDropdownMenu = () => {
         {factories.map((factory) => (
           <DropdownMenuItem
             key={factory.id}
-            className={`flex items-center gap-2 ${
+            className={`flex items-center gap-4 text-[16px] ${
               selectedFactory.id === factory.id
                 ? "text-primary bg-blue-50 font-medium"
                 : "text-gray-700"
@@ -58,7 +58,7 @@ const FactoryDropdownMenu = () => {
             onClick={() => setSelectedFactory(factory)}
           >
             <div className="w-3.5 h-3.5 flex items-center justify-center">
-            <Hotel className="w-6 h-6 text-primary " />
+            <Hotel className="w-5! h-5! text-primary " />
             </div>
             {factory.name}
           </DropdownMenuItem>

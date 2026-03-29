@@ -1,19 +1,13 @@
-"use client"
-import { BreadCrumbComponent } from "../BreadcrumbComponent"
-import { Button } from "../ui/button"
-import TappedNavigationBar from "@/view/Resources/Consumption/Components/TappedNavigationBar"
-import { usePathname } from "next/navigation"
 
+
+import BreadcrumbsComponent from "../BreadcrumbComponent"
+import { Button } from "../ui/button"
 
 const ResourcesTopBar = () => {
-  const path = usePathname();
   return (
-    <div className="flex justify-between items-center">
-      <BreadCrumbComponent />
-      <div className="flex gap-4">
-        {path.includes("consumption") && <TappedNavigationBar />}
-        <Button>Add Resource</Button>
-      </div>
+    <div className="flex justify-between">
+      <BreadcrumbsComponent />
+      <Button>Add Resource</Button>
     </div>
   )
 }

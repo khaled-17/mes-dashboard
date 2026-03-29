@@ -1,17 +1,11 @@
 import ResourcesSideBar from "@/components/resources/ResourcesSideBar";
-import ResourcesTopBar from "@/components/resources/ResourcesTopBar";
 import { ReactNode } from "react";
 
 export default function ResourcesLayout({ children }: { children: ReactNode }) {
   return (
-  <>
-
-<div className="flex gap-4 ">
-     <div className=" flex-1 flex flex-col  gap-6">
-     <ResourcesTopBar/>
-  <section className="grow">{children}</section>
- </div>
- <ResourcesSideBar/>
-</div>
-  </>);
+    <div className="flex flex-col gap-4 xl:flex-row xl:items-start">
+      <section className="min-w-0 flex-1">{children}</section>
+      <ResourcesSideBar />
+    </div>
+  );
 }
