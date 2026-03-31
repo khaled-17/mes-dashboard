@@ -1,4 +1,11 @@
-import { ArrowRightLeft, House, Leaf, TriangleAlert } from "lucide-react";
+import {
+  ArrowRightLeft,
+  House,
+  Leaf,
+  TriangleAlert,
+  Search,
+} from "lucide-react";
+import { Input } from "../ui/input";
 
 const alerts = [
   "Confirm mass on machine",
@@ -21,8 +28,16 @@ const suppliers = [
 
 const ResourcesSideBar = () => {
   return (
-    <aside className="w-full xl:w-[250px] xl:shrink-0">
+    <aside className="w-full max-w-93.75 xl:shrink-0">
       <div className="flex flex-col gap-4">
+        <div className="relative w-full">
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
+          <Input
+            type="text"
+            placeholder="Search by Material Name - Type"
+            className="h-8.5 rounded-xl border-0 bg-white pl-9 shadow-md placeholder:text-xs"
+          />
+        </div>
         <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
           <div className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-rose-400">
             <TriangleAlert className="size-4" />
