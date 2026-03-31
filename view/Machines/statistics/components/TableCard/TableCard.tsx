@@ -1,23 +1,23 @@
 "use client";
 
-import { Activity, SlidersVertical, Route, Tag } from "lucide-react";
+import { SlidersVertical } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import FunctionTab from "./Function Tab/F-Tab";
-import RouteTab from "./Route Tab/R-Tab";
-import JobOrderTab from "./Job Orders Tab/JO-Tab";
+import OverTimeTab from "./Over Time/OT-Tab";
+import DownTimeTab from "./Down Time/DT-Tab";
+import GOODvsScrapTab from "./Good Vs. Scrap/GvsS-Tab";
 import { useState } from "react";
 
 function TableCard() {
-  const [activeTab, setActiveTab] = useState<string>("Function");
+  const [activeTab, setActiveTab] = useState<string>("Over Time");
 
   const handleTabChange = () => {
-    if (activeTab === "Function") {
-      return <FunctionTab />;
-    } else if (activeTab === "Route") {
-      return <RouteTab />;
-    } else if (activeTab === "Job Order") {
-      return <JobOrderTab />;
+    if (activeTab === "Over Time") {
+      return <OverTimeTab />;
+    } else if (activeTab === "Down Time") {
+      return <DownTimeTab />;
+    } else if (activeTab === "Good Vs. Scrap") {
+      return <GOODvsScrapTab />;
     }
   };
 
@@ -26,8 +26,8 @@ function TableCard() {
       <Card className="w-full min-w-0">
         <CardHeader className="flex flex-col items-start justify-between gap-4 px-4 sm:px-6 lg:flex-row lg:items-center">
           <CardTitle className="flex items-center gap-4 ">
-            <Activity className="w-5 h-5" />
-            <span className="text-[16px]">Current Activity</span>
+            <SlidersVertical className="w-5 h-5" />
+            <span className="text-[16px]">Machine Statistics</span>
           </CardTitle>
 
           <div className="pr-12">
@@ -39,32 +39,32 @@ function TableCard() {
                 <TabsTrigger
                   value="Function"
                   onClick={() => {
-                    setActiveTab("Function");
+                    setActiveTab("Over Time");
                   }}
                   className="pb-3 text-[16px]"
                 >
-                  <SlidersVertical className="w-5! h-5! mr-1" />
-                  Function
+                  {/* <SlidersVertical className="w-5! h-5! mr-1" /> */}
+                  Over Time
                 </TabsTrigger>
                 <TabsTrigger
                   value="Route"
                   onClick={() => {
-                    setActiveTab("Route");
+                    setActiveTab("Down Time");
                   }}
                   className="pb-3 text-[16px]"
                 >
-                  <Route className="w-5! h-5! mr-1" />
-                  Route
+                  {/* <Route className="w-5! h-5! mr-1" /> */}
+                  Down Time
                 </TabsTrigger>
                 <TabsTrigger
                   value="Job Order"
                   onClick={() => {
-                    setActiveTab("Job Order");
+                    setActiveTab("Good Vs. Scrap");
                   }}
                   className="pb-3 text-[16px]"
                 >
-                  <Tag className="w-5! h-5! mr-1" />
-                  Job Order
+                  {/* <Tag className="w-5! h-5! mr-1" /> */}
+                  Good Vs. Scrap
                 </TabsTrigger>
               </TabsList>
             </Tabs>

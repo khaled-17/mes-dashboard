@@ -13,161 +13,172 @@ import {
   PolarRadiusAxis,
   Label,
 } from "recharts";
+import { Progress } from "@/components/ui/progress";
 
 function Charts() {
   return (
-    <>
-        <div className="flex-1 flex flex-col items-center">
-            <ChartContainer config={chartConfig} className="aspect-square h-25">
+    <div className="flex flex-col w-full gap-1">
+      {/* Charts Row */}
+      <div className="flex items-center justify-center w-full gap-4 -mb-2 mt-3.5">
+        {/* Chart 1 - Availability */}
+        <div className="flex items-center gap-2">
+          <ChartContainer config={chartConfig} className="aspect-square h-[60px] min-w-[60px]">
             <RadialBarChart
-                data={chartData1}
-                startAngle={90}
-                endAngle={-180}
-                innerRadius={35}
-                outerRadius={50}
+              data={chartData1}
+              startAngle={90}
+              endAngle={-180}
+              innerRadius={22}
+              outerRadius={33}
             >
-                <PolarGrid
+              <PolarGrid
                 gridType="circle"
                 radialLines={false}
                 stroke="none"
                 className="first:fill-gray-200 last:fill-background"
-                polarRadius={[38, 30]}
-                />
-                <RadialBar dataKey="visitors" background cornerRadius={10} />
-                <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
+                polarRadius={[25, 20]}
+              />
+              <RadialBar dataKey="visitors" background cornerRadius={10} />
+              <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
                 <Label
-                    content={({ viewBox }) => {
+                  content={({ viewBox }) => {
                     if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                        return (
+                      return (
                         <text
-                            x={viewBox.cx}
-                            y={viewBox.cy}
-                            textAnchor="middle"
-                            dominantBaseline="middle"
+                          x={viewBox.cx}
+                          y={viewBox.cy}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
                         >
-                            <tspan
+                          <tspan
                             x={viewBox.cx}
                             y={viewBox.cy}
-                            className="fill-foreground text-[21px] font-bold"
-                            >
-                            {chartData1[0].visitors.toLocaleString()}%
-                            </tspan>
-                            <tspan
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 24}
-                            className="fill-muted-foreground"
-                            ></tspan>
+                            className="fill-foreground text-[12px] font-bold"
+                          >
+                          </tspan>
                         </text>
-                        );
+                      );
                     }
-                    }}
+                  }}
                 />
-                </PolarRadiusAxis>
+              </PolarRadiusAxis>
             </RadialBarChart>
-            </ChartContainer>
-            <p className="font-bold text-[16px] -mt-2">Availability</p>
+          </ChartContainer>
+          <div className="flex flex-col -ml-2">
+            <span className="text-[14px] font-bold text-slate-600">Availability</span>
+            <span className="text-[18px] font-bold text-slate-900">{chartData1[0].visitors}%</span>
+          </div>
         </div>
-        <div className="flex-1 flex flex-col items-center">
-            <ChartContainer config={chartConfig} className="aspect-square h-25">
+
+        {/* Chart 2 - Performance */}
+        <div className="flex items-center gap-2">
+          <ChartContainer config={chartConfig} className="aspect-square h-[60px] min-w-[60px]">
             <RadialBarChart
-                data={chartData2}
-                startAngle={90}
-                endAngle={-140}
-                innerRadius={35}
-                outerRadius={50}
+              data={chartData1}
+              startAngle={90}
+              endAngle={-180}
+              innerRadius={22}
+              outerRadius={33}
             >
-                <PolarGrid
+              <PolarGrid
                 gridType="circle"
                 radialLines={false}
                 stroke="none"
                 className="first:fill-gray-200 last:fill-background"
-                polarRadius={[38, 30]}
-                />
-                <RadialBar dataKey="visitors" background cornerRadius={10} />
-                <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
+                polarRadius={[25, 20]}
+              />
+              <RadialBar dataKey="visitors" background cornerRadius={10} />
+              <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
                 <Label
-                    content={({ viewBox }) => {
+                  content={({ viewBox }) => {
                     if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                        return (
+                      return (
                         <text
-                            x={viewBox.cx}
-                            y={viewBox.cy}
-                            textAnchor="middle"
-                            dominantBaseline="middle"
+                          x={viewBox.cx}
+                          y={viewBox.cy}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
                         >
-                            <tspan
+                          <tspan
                             x={viewBox.cx}
                             y={viewBox.cy}
-                            className="fill-foreground text-[21px] font-bold"
-                            >
-                            {chartData2[0].visitors.toLocaleString()}%
-                            </tspan>
-                            <tspan
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 24}
-                            className="fill-muted-foreground"
-                            ></tspan>
+                            className="fill-foreground text-[12px] font-bold"
+                          >
+                          </tspan>
                         </text>
-                        );
+                      );
                     }
-                    }}
+                  }}
                 />
-                </PolarRadiusAxis>
+              </PolarRadiusAxis>
             </RadialBarChart>
-            </ChartContainer>
-            <p className="font-bold text-[16px] -mt-2">Preformance</p>
+          </ChartContainer>
+          <div className="flex flex-col -ml-2">
+            <span className="text-[14px] font-bold text-slate-600">Performance</span>
+            <span className="text-[18px] font-bold text-slate-900">{chartData2[0].visitors}%</span>
+          </div>
         </div>
-        <div className="flex-1 flex flex-col items-center">
-            <ChartContainer config={chartConfig} className="aspect-square h-25">
+
+        {/* Chart 3 - Quality */}
+        <div className="flex items-center gap-2">
+          <ChartContainer config={chartConfig} className="aspect-square h-[60px] min-w-[60px]">
             <RadialBarChart
-                data={chartData3}
-                startAngle={90}
-                endAngle={0}
-                innerRadius={35}
-                outerRadius={50}
+              data={chartData3}
+              startAngle={90}
+              endAngle={0}
+              innerRadius={22}
+              outerRadius={33}
             >
-                <PolarGrid
+              <PolarGrid
                 gridType="circle"
                 radialLines={false}
                 stroke="none"
                 className="first:fill-gray-200 last:fill-background"
-                polarRadius={[38, 30]}
-                />
-                <RadialBar dataKey="visitors" background cornerRadius={10} />
-                <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
+                polarRadius={[25, 20]}
+              />
+              <RadialBar dataKey="visitors" background cornerRadius={10} />
+              <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
                 <Label
-                    content={({ viewBox }) => {
+                  content={({ viewBox }) => {
                     if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                        return (
+                      return (
                         <text
-                            x={viewBox.cx}
-                            y={viewBox.cy}
-                            textAnchor="middle"
-                            dominantBaseline="middle"
+                          x={viewBox.cx}
+                          y={viewBox.cy}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
                         >
-                            <tspan
+                          <tspan
                             x={viewBox.cx}
                             y={viewBox.cy}
-                            className="fill-foreground text-[21px] font-bold"
-                            >
-                            {chartData3[0].visitors.toLocaleString()}%
-                            </tspan>
-                            <tspan
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 24}
-                            className="fill-muted-foreground"
-                            ></tspan>
+                            className="fill-foreground text-[12px] font-bold"
+                          >
+                          </tspan>
                         </text>
-                        );
+                      );
                     }
-                    }}
+                  }}
                 />
-                </PolarRadiusAxis>
+              </PolarRadiusAxis>
             </RadialBarChart>
-            </ChartContainer>
-            <p className="font-bold text-[16px] -mt-2">Quality</p>
+          </ChartContainer>
+          <div className="flex flex-col -ml-2">
+            <span className="text-[14px] font-bold text-slate-600">Quality</span>
+            <span className="text-[18px] font-bold text-slate-900">{chartData3[0].visitors}%</span>
+          </div>
         </div>
-    </>
+      </div>
+
+      {/* EEO Progress Bar */}
+      <div className="flex items-center gap-3 px-2 mt-5">
+        <span className="text-[22px] font-bold text-slate-900 whitespace-nowrap -mt-1.75">EEO</span>
+        <Progress
+          value={65}
+          style={{ "--progress": 65 } as React.CSSProperties}
+          className="h-2 w-full bg-border progress-animate"
+        />
+        <span className="text-[22px] font-bold text-slate-900 whitespace-nowrap -mt-1.75">65%</span>
+      </div>
+    </div>
   );
 }
 
