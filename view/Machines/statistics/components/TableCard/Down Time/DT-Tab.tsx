@@ -68,7 +68,7 @@ const CustomXAxisTick = ({
           dy={14 + i * 13}
           textAnchor="middle"
           fill="#1d3255"
-          fontSize={13}
+          fontSize={12}
         >
           {line}
         </text>
@@ -100,14 +100,14 @@ const CustomTooltip = ({ active, payload }: TooltipProps<number, string>) => {
 // ─── Legend ───────────────────────────────────────────────────────────────────
 
 const ChartLegend = () => (
-  <div className="flex items-center justify-end gap-6 pt-3 mb-6">
+  <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-6 pt-3 mb-4 sm:mb-6">
     {(Object.keys(COLORS) as ColorKey[]).map((key) => (
       <div key={key} className="flex items-center gap-1.5">
         <span
-          className="inline-block h-[4.5px] w-6 rounded-full"
+          className="inline-block h-[4.5px] w-4 sm:w-6 rounded-full"
           style={{ backgroundColor: COLORS[key] }}
         />
-        <span className="text-[16px] font-bold text-slate-500">{LEGEND_LABELS[key]}</span>
+        <span className="text-[11px] sm:text-[13px] lg:text-[16px] font-bold text-slate-500">{LEGEND_LABELS[key]}</span>
       </div>
     ))}
   </div>
@@ -118,7 +118,7 @@ const ChartLegend = () => (
 export default function DownTimeTab() {
   return (
     <>
-      <div className="h-[340px] w-full">
+      <div className="h-[260px] sm:h-[300px] lg:h-[340px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}

@@ -36,7 +36,7 @@ const CustomXAxisTick = ({ x, y, payload }: { x: number; y: number; payload: { v
   const parts = payload.value.split(' '); // Splits "Machine Name" into ["Machine", "Name"]
   return (
     <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={16} textAnchor="middle" fill={COLORS.text} fontSize={10} fontWeight="700">
+      <text x={0} y={0} dy={16} textAnchor="middle" fill={COLORS.text} fontSize={10} fontWeight="800">
         <tspan x="0" dy="1.2em">{parts[0]}</tspan>
         <tspan x="0" dy="1.2em">{parts[1]}</tspan>
       </text>
@@ -46,7 +46,7 @@ const CustomXAxisTick = ({ x, y, payload }: { x: number; y: number; payload: { v
 
 const GOODvsScrapTab = () => {
   return (
-    <div style={{ width: '100%', height: 400, padding: '20px', backgroundColor: '#fff' }}>
+    <div className="w-full h-[300px] sm:h-[350px] lg:h-[400px] p-2 sm:p-3 lg:p-5 bg-white">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}

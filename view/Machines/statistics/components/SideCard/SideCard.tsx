@@ -17,7 +17,7 @@ function SideCard() {
   const [activeTab, setActiveTab] = useState<keyof typeof data>("Function");
 
   return (
-    <div className="flex flex-col gap-8 w-full xl:w-[24rem] xl:shrink-0">
+    <div className="flex flex-col gap-4 sm:gap-8 w-full xl:w-88 2xl:w-[24rem] xl:shrink-0">
       
       {/* CARD 1 */}
       <Card className="w-full min-w-0">
