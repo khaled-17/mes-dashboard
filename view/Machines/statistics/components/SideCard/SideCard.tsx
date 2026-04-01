@@ -102,7 +102,7 @@ function SideCard() {
       </Card>
 
       {/* CARD 2 */}
-      <Card className="w-full min-w-0">
+      <Card className="w-full min-w-0 pb-8">
         <CardHeader className="px-6 mb-2">
           <CardTitle className="flex items-center gap-3">
             <SlidersVertical size={20} />
