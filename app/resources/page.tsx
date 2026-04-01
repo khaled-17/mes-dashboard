@@ -1,9 +1,7 @@
+import ResourcesPage from "@/view/Resources/ResourcesPage";
 
+const Resources = () => {
+  return <ResourcesPage />;
+};
 
-const page = () => {
-  return (
-    <div>page</div>
-  )
-}
-
-export default page
+export default Resources;

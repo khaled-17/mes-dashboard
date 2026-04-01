@@ -1,4 +1,6 @@
-import { BreadCrumbComponent } from "../BreadcrumbComponent"
+
+
+import BreadcrumbsComponent from "../BreadcrumbComponent"
 import { Button } from "../ui/button"
 
 
@@ -7,7 +9,7 @@ import { Button } from "../ui/button"
 const ResourcesTopBar = () => {
   return (
     <div className="flex justify-between">
-        <BreadCrumbComponent  />
+        <BreadcrumbsComponent  />
 
   
      <Button>Add Resource</Button>

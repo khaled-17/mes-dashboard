@@ -156,20 +156,37 @@
   }
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-  width: 12px;
+/* Chrome / Edge */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #E2E8F0;
+::-webkit-scrollbar-track {
+  background: #003F5C2B;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #003F5C;
   border-radius: 10px;
-  border: 2px solid #E2E8F0;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #002D42;
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #003F5C #003F5C2B;
+}
+
+
+.progress-animate [data-slot="progress-indicator"] {
+  transform: translateX(calc(-100% + var(--progress) * 1%));
+  animation: progressGrow 2s ease-out;
+}
+
+@keyframes progressGrow {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(calc(-100% + var(--progress) * 1%));
+  }
 }
