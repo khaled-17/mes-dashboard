@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Layers, SlidersVertical } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 
-const tabs = ["Function", "Material", "Product"];
+const tabs = ["Function", "Material", "Product"] as const;
 
 const data = {
   Function: ["Function", "Function", "Function", "Function", "Function", "Function", "Function", "Function", "Function", "Function"],
@@ -14,11 +14,23 @@ const data = {
 };
 
 function SideCard() {
-  const [activeTab, setActiveTab] = useState<keyof typeof data>("Function");
+  const [activeTab, setActiveTab] =
+    useState<keyof typeof data>("Function");
+
+  const getInitialChecked = (tab: keyof typeof data) =>
+    data[tab].map((item, i) => `${item}-${i}`);
+
+  const [checkedItems, setCheckedItems] = useState<string[]>(
+    getInitialChecked("Function")
+  );
+
+  const handleTabChange = (tab: keyof typeof data) => {
+    setActiveTab(tab);
+    setCheckedItems(getInitialChecked(tab)); // reset هنا بدل useEffect
+  };
 
   return (
-    <div className="flex flex-col gap-4 sm:gap-8 w-full xl:w-88 2xl:w-[24rem] xl:shrink-0">
-      
+    <div className="flex flex-col gap-8 w-full xl:w-[24rem] xl:shrink-0">
       {/* CARD 1 */}
       <Card className="w-full min-w-0">
         <CardHeader className="px-6 mb-2">
@@ -31,10 +43,10 @@ function SideCard() {
         <CardContent className="px-6 pb-6 space-y-4">
           {/* fake selects */}
           <div className="space-y-4 mb-10">
-            <div className=" border-b-4 rounded-md px-3  text-[14px] font text-muted-foreground">
+            <div className="border-b-4 rounded-md px-3 text-[14px] text-muted-foreground">
               Job Order
             </div>
-            <div className="border-b-4 rounded-md px-3  text-[14px] text-muted-foreground">
+            <div className="border-b-4 rounded-md px-3 text-[14px] text-muted-foreground">
               Route
             </div>
           </div>
@@ -44,7 +56,7 @@ function SideCard() {
             {tabs.map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab as keyof typeof data)}
+                onClick={() => handleTabChange(tab)}
                 className={`flex-1 text-sm font-semibold py-1.5 rounded-md transition ${
                   activeTab === tab
                     ? "bg-blue-600 text-white"
@@ -57,18 +69,34 @@ function SideCard() {
           </div>
 
           {/* checkboxes */}
-          <div className="grid  grid-cols-2 gap-3 pt-2">
-            {data[activeTab].map((item, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <Checkbox className="bg-blue-800" id={`${item}-${i}`} />
-                <label
-                  htmlFor={`${item}-${i}`}
-                  className="text-sm font-semibold text-blue-950"
-                >
-                  {item}
-                </label>
-              </div>
-            ))}
+          <div className="grid grid-cols-2 gap-3 pt-2">
+            {data[activeTab].map((item, i) => {
+              const id = `${item}-${i}`;
+              const isChecked = checkedItems.includes(id);
+
+              return (
+                <div key={id} className="flex items-center gap-2">
+                  <Checkbox
+                    id={id}
+                    checked={isChecked}
+                    onCheckedChange={(checked) => {
+                      setCheckedItems((prev) =>
+                        checked
+                          ? [...prev, id]
+                          : prev.filter((x) => x !== id)
+                      );
+                    }}
+                    className="border-gray-400 data-[state=checked]:bg-blue-800 data-[state=checked]:border-blue-800"
+                  />
+                  <label
+                    htmlFor={id}
+                    className="text-sm font-semibold text-blue-950"
+                  >
+                    {item}
+                  </label>
+                </div>
+              );
+            })}
           </div>
         </CardContent>
       </Card>
@@ -83,28 +111,37 @@ function SideCard() {
         </CardHeader>
 
         <CardContent className="px-6 space-y-5">
-          
-          {/* Active / Inactive */}
           <div className="flex gap-6">
             <div className="flex items-center gap-2">
-              <Checkbox className="bg-blue-800" id="active" />
-              <label htmlFor="active" className="text-sm">Active</label>
+              <Checkbox
+                id="active"
+                defaultChecked
+                className="border-gray-400 data-[state=checked]:bg-blue-800 data-[state=checked]:border-blue-800"
+              />
+              <label htmlFor="active" className="text-sm">
+                Active
+              </label>
             </div>
             <div className="flex items-center gap-2">
-              <Checkbox className="bg-blue-800" id="inactive" />
-              <label htmlFor="inactive" className="text-sm">Inactive</label>
+              <Checkbox
+                id="inactive"
+                className="border-gray-400 data-[state=checked]:bg-blue-800 data-[state=checked]:border-blue-800"
+              />
+              <label htmlFor="inactive" className="text-sm">
+                Inactive
+              </label>
             </div>
           </div>
 
-          {/* sliders */}
           <div className="space-y-4">
             {["Material Consumption", "Energy Consumption", "Production"].map(
               (label, i) => (
                 <div key={i} className="space-y-1">
-                  <p className="text-md font-semibold text-blue-950">{label}</p>
+                  <p className="text-md font-semibold text-blue-950">
+                    {label}
+                  </p>
                   <input
                     type="range"
-                    
                     className="w-full accent-blue-600"
                   />
                 </div>

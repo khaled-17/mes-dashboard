@@ -1,5 +1,6 @@
-import HomeView from "@/view/Home";
+
+import DahboardView from "@/view/Dashboard/Dashboard";
 
 export default function HomePage() {
-  return <HomeView />;
+  return <DahboardView />;
 }
