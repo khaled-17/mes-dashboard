@@ -13,7 +13,7 @@ function SideCard() {
   return (
     <>
       <div className="w-full xl:w-[24rem] xl:shrink-0">
-        <Card className="h-full w-full min-w-0">
+        <Card className="min-[1850px]:h-full w-full min-w-0">
           <CardContent className="px-6">
             {/* ALERTS */}
             <div>
@@ -25,7 +25,7 @@ function SideCard() {
                   </span>
                 </CardTitle>
               </CardHeader>
-              <div className="overflow-y-auto h-90 border-b border-border">
+              <div className="overflow-y-auto h-90  border-b border-border">
                 <Shelf
                   icon={<Warehouse color="#D0D7DA" size={30} />}
                   iconName="Warehouse"

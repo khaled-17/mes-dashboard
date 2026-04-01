@@ -24,25 +24,26 @@ function TableCard() {
   return (
     <div className="w-full min-w-0">
       <Card className="w-full min-w-0">
-        <CardHeader className="flex flex-col items-start justify-between gap-3 sm:gap-4 px-3 sm:px-4 md:px-6 lg:flex-row lg:items-center">
-          <CardTitle className="flex items-center gap-2 sm:gap-4">
-            <SlidersVertical className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-            <span className="text-[14px] sm:text-[16px] whitespace-nowrap">Machine Statistics</span>
+        <CardHeader className="flex flex-col items-start justify-between gap-4 px-4 sm:px-6 lg:flex-row lg:items-center">
+          <CardTitle className="flex items-center gap-4 ">
+            <SlidersVertical className="w-5 h-5" />
+            <span className="text-[16px]">Machine Statistics</span>
           </CardTitle>
 
-          <div className="w-full lg:w-auto lg:pr-12">
+          <div className="md:pr-12">
             <Tabs defaultValue="Function">
               <TabsList
                 variant="underline"
-                className="mr-0 flex-wrap gap-1 sm:gap-2 md:gap-4 border-none"
+                className="mr-0 flex-wrap gap-2 border-none sm:gap-4"
               >
                 <TabsTrigger
                   value="Function"
                   onClick={() => {
                     setActiveTab("Over Time");
                   }}
-                  className="pb-2 sm:pb-3 text-[13px] sm:text-[16px]"
+                  className="pb-3 text-[16px]"
                 >
+                  {/* <SlidersVertical className="w-5! h-5! mr-1" /> */}
                   Over Time
                 </TabsTrigger>
                 <TabsTrigger
@@ -50,8 +51,9 @@ function TableCard() {
                   onClick={() => {
                     setActiveTab("Down Time");
                   }}
-                  className="pb-2 sm:pb-3 text-[13px] sm:text-[16px]"
+                  className="pb-3 text-[16px]"
                 >
+                  {/* <Route className="w-5! h-5! mr-1" /> */}
                   Down Time
                 </TabsTrigger>
                 <TabsTrigger
@@ -59,8 +61,9 @@ function TableCard() {
                   onClick={() => {
                     setActiveTab("Good Vs. Scrap");
                   }}
-                  className="pb-2 sm:pb-3 text-[13px] sm:text-[16px]"
+                  className="pb-3 text-[16px] "
                 >
+                  {/* <Tag className="w-5! h-5! mr-1" /> */}
                   Good Vs. Scrap
                 </TabsTrigger>
               </TabsList>
@@ -68,8 +71,10 @@ function TableCard() {
           </div>
         </CardHeader>
 
-        <CardContent className="min-w-0 overflow-x-auto px-3 pb-4 pt-2 sm:px-4 sm:pb-6 sm:pt-4 md:px-6 lg:px-10">
-          {handleTabChange()}
+        <CardContent className="min-w-0 overflow-x-auto px-4 pb-6 pt-4 sm:px-6 lg:px-10">
+          <div className="min-w-175 overflow-x-auto overflow-y-hidden">
+            {handleTabChange()}
+          </div>
         </CardContent>
       </Card>
     </div>
@@ -77,4 +82,3 @@ function TableCard() {
 }
 
 export default TableCard;
-

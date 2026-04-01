@@ -1,5 +1,6 @@
 // "use client";
 
+import { Table, TableBody } from "@/components/ui/table";
 import {
   LineChart,
   Line,
@@ -32,9 +33,9 @@ const data = [
 
 function OverTimeTab() {
   return (
-    <div className="flex flex-col w-full bg-white h-[280px] sm:h-[350px] lg:h-[400px]">
+    <div className="flex flex-col w-full  bg-white h-[400px]">
       {/* 1. Container الرسمة الأساسية (بدون تواريخ) */}
-      <div className="h-[300px] sm:h-[370px] lg:h-[425px] w-full overflow-hidden">
+      <div className="h-[425px] overflow-hidden">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 20, right: 10, left: -20, bottom: 0 }}>
             <CartesianGrid vertical={false} strokeDasharray="2 4" stroke="#e2e8f0" />
@@ -59,7 +60,7 @@ function OverTimeTab() {
 
       {/* 2. خط التواريخ منفصل تماماً (لتحكم أدق) */}
       {/* الـ mt-[-8px] هنا بيتحكم في قرب التواريخ من الرسمة */}
-      <div className="h-[30px] w-full mt-[-148px] sm:mt-[-148px] border-t border-[#00000085]">
+      <div className="h-[30px] w-full mt-[-148px] border-t border-[#00000085]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 0, right: 10, left: -20, bottom: 0 }}>
             <XAxis 
@@ -75,7 +76,7 @@ function OverTimeTab() {
       </div>
 
       {/* 3. الـ Legend (تسميات الألوان) */}
-      <div className="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-6 mt-4 sm:mt-8 pr-2 sm:pr-6">
+      <div className="flex justify-end gap-6 mt-8 pr-6">
         {[
           { label: "EOO", color: "#1e293b" },
           { label: "Avalability", color: "#f59e0b" },
@@ -84,7 +85,7 @@ function OverTimeTab() {
         ].map((item) => (
           <div key={item.label} className="flex items-center gap-2">
             <div className="w-6 h-[4px] rounded-sm" style={{ background: item.color }} />
-            <span className="text-[12px] sm:text-[14px] lg:text-[16px] font-bold text-[#475569]">{item.label}</span>
+            <span className="text-[16px] font-bold text-[#475569]">{item.label}</span>
           </div>
         ))}
       </div>
