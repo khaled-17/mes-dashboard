@@ -59,7 +59,7 @@ export default function TopCards() {
         </CardContent>
       </Card>
 
-      <Card className="min-w-0 min-h-52 flex-1 ">
+      <Card className="min-w-0 min-h-52 flex-2 ">
         <CardHeader className="px-6">
           <CardTitle className="flex items-center gap-3 ">
             <SlidersHorizontal className="w-5 h-5" />
