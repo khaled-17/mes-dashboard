@@ -19,9 +19,9 @@ function Charts() {
   return (
     <div className="flex flex-col w-full gap-1">
       {/* Charts Row */}
-      <div className="grid grid-cols-1 xs:grid-cols-3 sm:flex items-center justify-center w-full gap-2 sm:gap-3 lg:gap-5 -mb-2 mt-2 sm:mt-3.5 lg:mt-4">
+      <div className="flex items-center justify-evenly w-full gap-2 mb-3 ">
         {/* Chart 1 - Availability */}
-        <div className="flex items-center gap-1 sm:gap-2 lg:gap-3">
+        <div className="flex items-center gap-1">
           <ChartContainer config={chartConfig} className="aspect-square h-[50px] sm:h-[60px] lg:h-[70px] xl:h-[75px] min-w-[50px] sm:min-w-[60px] lg:min-w-[70px] xl:min-w-[75px]">
             <RadialBarChart
               data={chartData1}
@@ -70,7 +70,7 @@ function Charts() {
         </div>
 
         {/* Chart 2 - Performance */}
-        <div className="flex items-center gap-1 sm:gap-2 lg:gap-3">
+        <div className="flex items-center gap-1">
           <ChartContainer config={chartConfig} className="aspect-square h-[50px] sm:h-[60px] lg:h-[70px] xl:h-[75px] min-w-[50px] sm:min-w-[60px] lg:min-w-[70px] xl:min-w-[75px]">
             <RadialBarChart
               data={chartData1}
@@ -119,7 +119,7 @@ function Charts() {
         </div>
 
         {/* Chart 3 - Quality */}
-        <div className="flex items-center gap-1 sm:gap-2 lg:gap-3">
+        <div className="flex items-center gap-1">
           <ChartContainer config={chartConfig} className="aspect-square h-[50px] sm:h-[60px] lg:h-[70px] xl:h-[75px] min-w-[50px] sm:min-w-[60px] lg:min-w-[70px] xl:min-w-[75px]">
             <RadialBarChart
               data={chartData3}
@@ -169,14 +169,14 @@ function Charts() {
       </div>
 
       {/* EEO Progress Bar */}
-      <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 px-1 sm:px-2 lg:px-3 mt-3 sm:mt-5 lg:mt-6">
-        <span className="text-[16px] sm:text-[22px] lg:text-[24px] xl:text-[26px] font-bold text-slate-900 whitespace-nowrap -mt-1.75">EEO</span>
+      <div className="flex items-center gap-2 px-1">
+        <span className="text-[16px] sm:text-[22px] lg:text-[24px] font-bold text-slate-900 whitespace-nowrap -mt-1.75">EEO</span>
         <Progress
           value={65}
           style={{ "--progress": 65 } as React.CSSProperties}
           className="h-2 w-full bg-border progress-animate"
         />
-        <span className="text-[16px] sm:text-[22px] lg:text-[24px] xl:text-[26px] font-bold text-slate-900 whitespace-nowrap -mt-1.75">65%</span>
+        <span className="text-[16px] sm:text-[22px] lg:text-[24px] font-bold text-slate-900 whitespace-nowrap -mt-1.75">65%</span>
       </div>
     </div>
   );

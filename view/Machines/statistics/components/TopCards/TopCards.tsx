@@ -6,7 +6,7 @@ import Charts from "./charts";
 export default function TopCards() {
   return (
     <>
-      <Card className="min-h-52 flex-1">
+      <Card className="min-h-52  flex-1">
         <CardHeader className="px-6">
           <CardTitle className="flex items-center gap-3 ">
             <ScanBarcode className="w-5 h-5" />
@@ -52,14 +52,14 @@ export default function TopCards() {
               className="h-2 w-full bg-border progress-animate"
             />
 
-            <span className="text-[23px] font-bold text-slate-900 -mt-1.75">
+            <span className="text-[24px] font-bold text-slate-900 -mt-1.75">
               65%
             </span>
           </div>
         </CardContent>
       </Card>
 
-      <Card className="min-h-52 flex-2">
+      <Card className="min-h-52  flex-2">
         <CardHeader className="px-6">
           <CardTitle className="flex items-center gap-3 ">
             <SlidersHorizontal className="w-5 h-5" />
@@ -72,7 +72,7 @@ export default function TopCards() {
         </CardContent>
       </Card>
 
-      <Card className="min-h-52 flex-1 ">
+      <Card className="min-h-52  flex-1 ">
         <CardHeader className="px-6">
           <CardTitle className="flex items-center gap-4 ">
             <Leaf className="w-5 h-5" />
@@ -118,7 +118,7 @@ export default function TopCards() {
               className="h-2 w-full bg-border progress-animate"
             />
 
-            <span className="text-[23px] font-bold text-slate-900 -mt-1.75">
+            <span className="text-[24px] font-bold text-slate-900 -mt-1.75">
               75%
             </span>
           </div>
