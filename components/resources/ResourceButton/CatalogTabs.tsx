@@ -1,6 +1,6 @@
 "use client";
 
-import { TabsList, TabsTrigger } from "../ui/tabs";
+import { TabsList, TabsTrigger } from "../../ui/tabs";
 
 function CatalogTabs() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import MaterialIcon from "@/icons/MaterialIcon";
-import { DialogTitle } from "../ui/dialog";
+import { DialogTitle } from "../../ui/dialog";
 
 function ModalHeader() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "../ui/button";
-import { DialogClose } from "../ui/dialog";
+import { Button } from "../../ui/button";
+import { DialogClose } from "../../ui/dialog";
 
 function ModalActions() {
   return (

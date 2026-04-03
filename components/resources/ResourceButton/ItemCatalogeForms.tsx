@@ -1,6 +1,6 @@
 "use client";
 
-import { TabsContent } from "../ui/tabs";
+import { TabsContent } from "../../ui/tabs";
 
 function ItemCatalogeForms() {
   return (

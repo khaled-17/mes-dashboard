@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "../ui/button";
-import { DialogTrigger } from "../ui/dialog";
+import { Button } from "../../ui/button";
+import { DialogTrigger } from "../../ui/dialog";
 
 function AddNewButton() {
   return (
