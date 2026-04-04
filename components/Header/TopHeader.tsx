@@ -1,5 +1,9 @@
 "use client";
-
+import {
+  getSectionKeyFromPathname,
+  getActiveTabFromPathname,
+  SECTION_NAVIGATION,
+} from "@/lib/section-navigation";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

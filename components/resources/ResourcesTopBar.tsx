@@ -1,5 +1,5 @@
 "use client";
-import { BreadCrumbComponent } from "../BreadcrumbComponent";
+import BreadCrumbComponent from "../BreadcrumbComponent";
 import { Button } from "../ui/button";
 import TappedNavigationBar from "@/view/Resources/Consumption/Components/TappedNavigationBar";
 import { usePathname } from "next/navigation";
