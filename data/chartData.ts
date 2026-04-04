@@ -14,7 +14,7 @@ export const chartData1 = [
 
 export const chartData2 = [
   {
-    visitors: 68,
+    visitors: 75,
     fill: "#00CCF2"
   },
 ];

@@ -27,7 +27,7 @@ const BAR_COLOR = "#0f2e44";
 export default function JobOrderTab() {
 
   return (
-    <div className="w-full h-95 mt-15 ml-2">
+    <div className="w-full h-113 mt-15 ml-2">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}

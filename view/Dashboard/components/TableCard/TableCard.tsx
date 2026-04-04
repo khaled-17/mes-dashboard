@@ -30,7 +30,7 @@ function TableCard() {
             <span className="text-[16px]">Current Activity</span>
           </CardTitle>
 
-          <div className="pr-12">
+          <div className="md:pr-12">
             <Tabs defaultValue="Function">
               <TabsList
                 variant="underline"
@@ -44,7 +44,7 @@ function TableCard() {
                   className="pb-3 text-[16px]"
                 >
                   <SlidersVertical className="w-5! h-5! mr-1" />
-                  Function
+                  <p>Function</p>
                 </TabsTrigger>
                 <TabsTrigger
                   value="Route"
@@ -54,7 +54,7 @@ function TableCard() {
                   className="pb-3 text-[16px]"
                 >
                   <Route className="w-5! h-5! mr-1" />
-                  Route
+                  <p>Route</p>
                 </TabsTrigger>
                 <TabsTrigger
                   value="Job Order"
@@ -64,14 +64,14 @@ function TableCard() {
                   className="pb-3 text-[16px]"
                 >
                   <Tag className="w-5! h-5! mr-1" />
-                  Job Order
+                  <p>Job Order</p>
                 </TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
         </CardHeader>
 
-        <CardContent className="min-w-0 overflow-x-auto px-4 pb-6 pt-4 sm:px-6 lg:px-10">
+        <CardContent className=" px-4 pb-6 pt-4 sm:px-6 lg:px-10">
           {handleTabChange()}
         </CardContent>
       </Card>
