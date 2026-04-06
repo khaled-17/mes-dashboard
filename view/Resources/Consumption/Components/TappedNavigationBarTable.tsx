@@ -6,15 +6,17 @@ type Props = {
   className?: string;
   tableMode?: "list" | "chart";
   setTableMode?: (a: "chart" | "list") => void;
+  mode?: "routesTable";
 };
 
 export default function TappedNavigationBarTable({
   className,
   tableMode,
   setTableMode,
+  mode,
 }: Props) {
   const triggerStyles =
-    "after:bg-primary text-[15px] pb-3 leading-6.25 data-active:text-primary font-roboto font-normal data-active:font-bold hover:text-muted-foreground! data-[state=active]:hover:text-primary!";
+    "after:bg-primary text-[15px] min-w-30 pb-3 leading-6.25 data-active:text-primary font-roboto font-normal data-active:font-bold hover:text-muted-foreground! data-[state=active]:hover:text-primary!";
 
   const chartIcon = (
     <svg
@@ -44,14 +46,15 @@ export default function TappedNavigationBarTable({
           className={triggerStyles}
           onClick={() => setTableMode && setTableMode("list")}
         >
-          <List className="size-6" /> Consumption List
+          <List className="size-6" />{" "}
+          {mode === "routesTable" ? "List" : "Consumption List"}
         </TabsTrigger>
         <TabsTrigger
           value="chart"
           className={triggerStyles}
           onClick={() => setTableMode && setTableMode("chart")}
         >
-          {chartIcon}Consumption Chart
+          {chartIcon} {mode === "routesTable" ? "Chart" : "Consumption Chart"}
         </TabsTrigger>
       </TabsList>
     </Tabs>

@@ -115,10 +115,10 @@ export default function RoutesView({
                               className="p-0"
                             >
                               <div
-                                className=" w-full flex justify-around py-1 pr-6 max-h-36 overflow-y-auto"
+                                className="w-full flex justify-around py-1 pr-6 max-h-36 "
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                <Table className="w-full mx-auto table-fixed">
+                                <Table className="flex-1 min-w-0 table-auto">
                                   <TableHeader className="font-montserrat text-[12px] tracking-[0.24px] border-b">
                                     <TableRow className=" h-6 w-full border-b border-[#B2BEC3]">
                                       <TableHead className="pb-2 pl-6 font-bold">
