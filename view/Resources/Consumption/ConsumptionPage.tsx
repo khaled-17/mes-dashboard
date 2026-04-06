@@ -14,10 +14,10 @@ const ConsumptionPage = () => {
   const pathName = usePathname();
 
   return (
-    <div className="">
-      <div className="flex justify-between items-center mb-5">
+    <div>
+      <div className="flex justify-between items-center mb-5 flex-wrap">
         <BreadcrumbsComponent />
-        <div className="flex gap-4.5">
+        <div className="flex gap-4.5 flex-wrap">
           <TappedNavigationBar />
           <Button className="h-9.5 flex gap-5.5 rounded-lg px-9 shadow-[0px_3px_6px_#00000029]">
             <Plus className="size-5.5 " />
@@ -26,7 +26,7 @@ const ConsumptionPage = () => {
         </div>
       </div>
       <div className="flex flex-col ">
-        <div className="grid gap-5.75 grid-cols-[1fr_2fr]">
+        <div className="grid gap-5.75 grid-cols-1 2xl:grid-cols-[1fr_2fr]">
           {/* first table */}
           <MaterialConsumptionTable />
 

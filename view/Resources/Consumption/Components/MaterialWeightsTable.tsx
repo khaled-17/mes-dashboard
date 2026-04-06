@@ -29,7 +29,7 @@ export default function MaterialWeightsTable() {
         </div>
       }
       content={
-        <div className="flex items-end justify-around p-4 rounded-xl">
+        <div className="flex items-end justify-around p-4 min-w-0 overflow-x-auto rounded-xl">
           {data.map((item, i) => (
             <VerticalProgress
               key={i}

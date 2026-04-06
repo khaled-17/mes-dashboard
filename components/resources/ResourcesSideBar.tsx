@@ -35,7 +35,7 @@ const ResourcesSideBar = () => {
           <Input
             type="text"
             placeholder="Search by Material Name - Type"
-            className="h-8.5 rounded-xl border-0 bg-white pl-9 shadow-md placeholder:text-xs"
+            className="h-9.5 rounded-xl border-0 bg-white pl-9 shadow-md placeholder:text-xs"
           />
         </div>
         <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">

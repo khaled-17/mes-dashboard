@@ -74,7 +74,7 @@ type ChartDataItem = {
   label2?: string;
 };
 
-const renderCustomLabel = (props: LabelProps) => {
+const renderCustomLabelForBars = (props: LabelProps) => {
   const { x, y, value } = props;
 
   return (
@@ -89,7 +89,7 @@ const renderCustomLabel = (props: LabelProps) => {
         fontWeight: "bold",
         fontFamily: "Montserrat, sans-serif",
         fontSize: "12px",
-        fill: "#272D3B", // In SVG, 'fill' is used instead of 'color'
+        fill: "#272D3B",
       }}
     >
       {value}
@@ -277,7 +277,7 @@ export const ResourcesChart = ({
               <Cell key={`cell-1-${index}`} fill={entry.color1} />
             ))}
             {/* Label for Range 1 */}
-            <LabelList dataKey="label1" content={renderCustomLabel} />
+            <LabelList dataKey="label1" content={renderCustomLabelForBars} />
           </Bar>
 
           {/* Second Segment Bar (Special case for Process 03) */}
@@ -289,7 +289,7 @@ export const ResourcesChart = ({
               />
             ))}
             {/* Label for Range 2 */}
-            <LabelList dataKey="label2" content={renderCustomLabel} />
+            <LabelList dataKey="label2" content={renderCustomLabelForBars} />
           </Bar>
         </ComposedChart>
       </ResponsiveContainer>
